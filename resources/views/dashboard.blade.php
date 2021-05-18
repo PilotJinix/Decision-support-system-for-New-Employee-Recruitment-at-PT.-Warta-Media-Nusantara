@@ -1,16 +1,8 @@
-<!DOCTYPE html>
-<html lang="id" dir="ltr">
-
-<head>
-    @include('layouts.header')
-</head>
-
-<body>
-<div id="main-wrapper">
-@include('layouts.navigationBar')
-<!--**********************************
-        Content body start
-    ***********************************-->
+@extends("layouts.master")
+@section('content')
+    <!--**********************************
+            Content body start
+        ***********************************-->
     <div class="content-body">
         <!-- row -->
         <div class="container-fluid">
@@ -694,19 +686,4 @@
     <!--**********************************
         Content body end
     ***********************************-->
-
-</div>
-
-</body>
-
-<!--**********************************
-    Scripts
-
-    @include('layouts.footer')
-
-    EndScripts
-***********************************-->
-
-
-
-</html>
+@endsection

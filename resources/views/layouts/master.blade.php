@@ -1,6 +1,34 @@
- <!--**********************************
-        Nav header start
-    ***********************************-->
+<!DOCTYPE html>
+<html lang="id" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Ventic : Ticketing Admin Template" />
+    <meta property="og:title" content="Ventic : Ticketing Admin Template" />
+    <meta property="og:description" content="Ventic : Ticketing Admin Template" />
+    <meta property="og:image" content=""/>
+    <meta name="format-detection" content="telephone=no">
+
+    <!-- PAGE TITLE HERE -->
+    <title>Ventic : Ticketing Admin Template</title>
+
+    <!-- FAVICONS ICON -->
+    <link rel="shortcut icon" type="image/png" href="{{asset("assets/images/favicon.png")}}" />
+
+    <link rel="stylesheet" href="{{asset("assets/vendor/chartist/css/chartist.min.css")}}">
+    <link href="{{asset("assets/vendor/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css")}}" rel="stylesheet">
+    <link href="{{asset("assets/vendor/jquery-nice-select/css/nice-select.css")}}" rel="stylesheet">
+    <!-- Style css -->
+    <link href="{{asset("assets/css/style.css")}}" rel="stylesheet">
+
+</head>
+
+<body>
+<div id="main-wrapper">
+    <!--**********************************
+       Nav header start
+   ***********************************-->
     <div class="nav-header">
         <a href="index.html" class="brand-logo">
             <!-- <img class="logo-abbr" src="./images/logo.png" alt="">
@@ -913,3 +941,35 @@
     <!--**********************************
        Support ticket button end
     ***********************************-->
+
+    @yield("content")
+
+</div>
+
+</body>
+
+<!--**********************************
+        Scripts
+    ***********************************-->
+<!-- Required vendors -->
+<script src="{{asset("assets/vendor/global/global.min.js")}}"></script>
+<script src="{{asset("assets/vendor/chart.js/Chart.bundle.min.js")}}"></script>
+<script src="{{asset("assets/vendor/bootstrap-datetimepicker/js/moment.js")}}"></script>
+<script src="{{asset("assets/vendor/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js")}}"></script>
+<script src="{{asset("assets/vendor/jquery-nice-select/js/jquery.nice-select.min.js")}}"></script>
+
+<!-- Chart piety plugin files -->
+<script src="{{asset("assets/vendor/peity/jquery.peity.min.js")}}"></script>
+
+<!-- Apex Chart -->
+<script src="{{asset("assets/vendor/apexchart/apexchart.js")}}"></script>
+
+<!-- Dashboard 1 -->
+<script src="{{asset("assets/js/dashboard/dashboard-1.js")}}"></script>
+
+<script src="{{asset("assets/js/custom.min.js")}}"></script>
+<script src="{{asset("assets/js/deznav-init.js")}}"></script>
+<script src="{{asset("assets/js/demo.js")}}"></script>
+<script src="{{asset("assets/js/styleSwitcher.js")}}"></script>
+
+</html>
