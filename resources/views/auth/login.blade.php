@@ -30,18 +30,27 @@
                     <div class="row no-gutters">
                         <div class="col-xl-12">
                             <div class="auth-form">
-                                <div class="text-center mb-3">
-                                    <a href="index.html"><img src="images/logo-full.png" alt=""></a>
-                                </div>
                                 <h4 class="text-center mb-4">Sign in your account</h4>
-                                <form action="https://ventic.dexignzone.com/xhtml/index.html">
+                                <form action="{{route('login')}}" method="POST">
+                                    @csrf
                                     <div class="mb-3">
-                                        <label class="mb-1"><strong>Email</strong></label>
-                                        <input type="email" class="form-control" value="hello@example.com">
+                                        <label class="mb-1"><strong>Username</strong></label>
+                                        <input type="text" class="form-control @error('username') is invalid @enderror" placeholder="admin" name="username" required >
+                                        @error('username')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{$message}}</strong>
+                                        </span>
+                                        @enderror
                                     </div>
+
                                     <div class="mb-3">
                                         <label class="mb-1"><strong>Password</strong></label>
-                                        <input type="password" class="form-control" value="Password">
+                                        <input type="password" class="form-control @error('password') is invalid @enderror" placeholder="Password" name="password" required>
+                                        @error('password')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{$message}}</strong>
+                                        </span>
+                                        @enderror
                                     </div>
                                     <div class="row d-flex justify-content-between mt-4 mb-2">
                                         <div class="mb-3">
@@ -54,6 +63,12 @@
                                     <div class="text-center">
                                         <button type="submit" class="btn btn-primary btn-block">Sign In</button>
                                     </div>
+                                    <br>
+                                    @if(session()->has('error'))
+                                    <div class="ml-3 mr-3 w-100  alert alert-danger">
+                                        {{session()->get('error')}}
+                                    </div>
+                                    @endif
                                 </form>
                             </div>
                         </div>

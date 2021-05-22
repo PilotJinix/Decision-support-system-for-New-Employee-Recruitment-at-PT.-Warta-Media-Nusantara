@@ -13,6 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('dashboard');
-});
+//Route::get('/', function () {
+//    return view('dashboard');
+//});
+
+Route::get('/', 'Auth\LoginController@index')->name('index');
+Route::post("auten", 'Auth\LoginController@authenticate')->name('login');
+Route::get('logout', 'Auth\LoginController@logout')->name('logout');
+
+Route::get('dashboard', 'DashboardController@index' )->name('dashboard');
+
