@@ -102,6 +102,132 @@
                     </div>
                 </div>
             </div>
+            <br>
+            <div class="form-head mb-4 d-flex flex-wrap align-items-center">
+                <div class="me-auto">
+                    <h2 class="font-w600 mb-0">Periode Penerimaan</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header justify-content-end">
+                            <a class="btn btn-rounded btn-primary" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#addNewCustomer"><span
+                                    class="btn-icon-start text-primary"><i class="fa fa-plus color-info"></i>
+                                    </span>Tambah Periode</a>
+                            <!-- Add Order -->
+                            <div class="modal fade" id="addNewCustomer">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Tambah Penerimaan</h5>
+                                            <a href="javascript:void(0);" class="btn-close" data-bs-dismiss="modal"></a>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form method="POST" action="{{route("create-periode")}}">
+                                                @csrf
+                                                <div class="mb-3">
+                                                    <label class="text-black font-w500">Name</label>
+                                                    <input type="text" class="form-control" name="name">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="text-black font-w500">Kategori</label>
+                                                    <select type="text" class="form-control form-select" name="kategori">
+                                                        <option selected>Pilih Status</option>
+                                                        <option value="Internship">Internship</option>
+                                                        <option value="Formal">Formal</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group">
+                                                    <button type="submit" class="btn btn-primary">Create</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table id="example3" class="display" style="min-width: 845px">
+                                    <thead>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>Name</th>
+                                        <th>Kategori</th>
+                                        <th>Periode</th>
+                                        <th>Status</th>
+                                        <th>Action</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    @php
+                                    $i = 1;
+                                    @endphp
+                                    @foreach($data_periode as $item)
+                                    <tr>
+                                        <td>{{$i++}}</td>
+                                        <td>{{__($item->name)}}</td>
+                                        <td>{{__($item->kategori)}}</td>
+                                        <td>{{__($item->id)}}</td>
+                                        <td>
+                                            @if($item->status == "0")
+                                                <span class="badge light badge-success">Dibuka</span>
+                                            @else
+                                                <span class="badge light badge-warning">Ditutup</span>
+                                            @endif
+                                        </td>
+                                        <td>
+                                            <div class="d-flex">
+                                                <a href="javascript:void(0)" class="btn btn-primary shadow btn-xs sharp me-1" data-bs-toggle="modal" data-bs-target="{{__("#editkegiatan".$item->id)}}"><i class="fa fa-pencil"></i></a>
+                                                <div class="modal fade" id="{{__('editkegiatan'.$item->id)}}">
+                                                    <div class="modal-dialog" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title">Edit Penerimaan</h5>
+                                                                <a href="javascript:void(0);" class="btn-close" data-bs-dismiss="modal"></a>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <form method="POST" action="{{route("create-periode")}}">
+                                                                    @csrf
+                                                                    <div class="mb-3">
+                                                                        <label class="text-black font-w500">Name</label>
+                                                                        <input type="text" class="form-control" name="name" value="{{__($item->name)}}">
+                                                                    </div>
+                                                                    <div class="mb-3">
+                                                                        <label class="text-black font-w500">Kategori</label>
+                                                                        <select type="text" class="form-control form-select" name="kategori">
+                                                                            @if($item->kategori == "Internship")
+                                                                                <option value="Internship" selected>Internship</option>
+                                                                                <option value="Formal">Formal</option>
+                                                                            @else
+                                                                                <option value="Internship">Internship</option>
+                                                                                <option value="Formal" selected>Formal</option>
+                                                                            @endif
+
+                                                                        </select>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <button type="submit" class="btn btn-primary">Create</button>
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <!--**********************************

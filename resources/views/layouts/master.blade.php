@@ -16,10 +16,15 @@
     <!-- FAVICONS ICON -->
     <link rel="shortcut icon" type="image/png" href="{{asset("assets/images/favicon.png")}}" />
 
+    <!-- Datatable -->
+    <link href="{{asset("assets/vendor/datatables/css/jquery.dataTables.min.css")}}" rel="stylesheet">
+
     <link rel="stylesheet" href="{{asset("assets/vendor/chartist/css/chartist.min.css")}}">
     <link href="{{asset("assets/vendor/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css")}}" rel="stylesheet">
     <link href="{{asset("assets/vendor/jquery-nice-select/css/nice-select.css")}}" rel="stylesheet">
+
     <!-- Style css -->
+    <link href="{{asset("assets/vendor/jquery-nice-select/css/nice-select.css")}}" rel="stylesheet">
     <link href="{{asset("assets/css/style.css")}}" rel="stylesheet">
 
 </head>
@@ -191,6 +196,12 @@
 
 <!-- Apex Chart -->
 <script src="{{asset("assets/vendor/apexchart/apexchart.js")}}"></script>
+
+<!-- Datatable -->
+<script src="{{asset("assets/vendor/datatables/js/jquery.dataTables.min.js")}}"></script>
+<script src="{{asset("assets/js/plugins-init/datatables.init.js")}}"></script>
+
+<script src="{{asset("assets/vendor/jquery-nice-select/js/jquery.nice-select.min.js")}}"></script>
 
 <!-- Dashboard 1 -->
 <script src="{{asset("assets/js/dashboard/dashboard-1.js")}}"></script>
