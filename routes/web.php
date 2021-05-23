@@ -23,5 +23,5 @@ Route::get('logout', 'Auth\LoginController@logout')->name('logout');
 
 Route::get('dashboard', 'DashboardController@index' )->name('dashboard');
 Route::post('dashboard/create-periode', 'DashboardController@periode')->name('create-periode');
-Route::get("dashboard/editpenerimaan/{id}", "DashboardController@editpenerimaan")->name("edit-penerimaan");
+Route::post("dashboard/editpenerimaan/{id}", "DashboardController@editpenerimaan")->name("edit-penerimaan");
 

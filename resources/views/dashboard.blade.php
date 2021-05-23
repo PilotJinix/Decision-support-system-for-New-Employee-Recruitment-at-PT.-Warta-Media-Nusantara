@@ -189,15 +189,15 @@
                                                                 <a href="javascript:void(0);" class="btn-close" data-bs-dismiss="modal"></a>
                                                             </div>
                                                             <div class="modal-body">
-                                                                <form method="POST" action="{{route("create-periode")}}">
+                                                                <form method="POST" action="{{route("edit-penerimaan", $item->id)}}">
                                                                     @csrf
                                                                     <div class="mb-3">
                                                                         <label class="text-black font-w500">Name</label>
-                                                                        <input type="text" class="form-control" name="name" value="{{__($item->name)}}">
+                                                                        <input type="text" class="form-control" name="editname" value="{{__($item->name)}}">
                                                                     </div>
                                                                     <div class="mb-3">
                                                                         <label class="text-black font-w500">Kategori</label>
-                                                                        <select type="text" class="form-control form-select" name="kategori">
+                                                                        <select type="text" class="form-control form-select" name="editkategori">
                                                                             @if($item->kategori == "Internship")
                                                                                 <option value="Internship" selected>Internship</option>
                                                                                 <option value="Formal">Formal</option>
@@ -205,11 +205,22 @@
                                                                                 <option value="Internship">Internship</option>
                                                                                 <option value="Formal" selected>Formal</option>
                                                                             @endif
-
+                                                                        </select>
+                                                                    </div>
+                                                                    <div class="mb-3">
+                                                                        <label class="text-black font-w500">Status Penerimaan</label>
+                                                                        <select type="text" class="form-control form-select" name="editstatus">
+                                                                            @if($item->status == "0")
+                                                                                <option value="0" selected>Dibuka</option>
+                                                                                <option value="1">Ditutup</option>
+                                                                            @else
+                                                                                <option value="0">Dibuka</option>
+                                                                                <option value="1" selected>Ditutup</option>
+                                                                            @endif
                                                                         </select>
                                                                     </div>
                                                                     <div class="form-group">
-                                                                        <button type="submit" class="btn btn-primary">Create</button>
+                                                                        <button type="submit" class="btn btn-primary btn-block">Save</button>
                                                                     </div>
                                                                 </form>
                                                             </div>

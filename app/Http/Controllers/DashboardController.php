@@ -41,9 +41,20 @@ class DashboardController extends Controller
             return redirect(route('index'));
         }
 
-        $datapenerimaan = DB::table("periode_penerimaan")->where("id", $id)->first();
+        $request -> validate([
+            "editname" => "required|string",
+            "editkategori" => "required|string",
+            "editstatus" => "required|string",
+        ]);
 
-        return view("dashboard", compact("datapenerimaan"));
+        DB::table("periode_penerimaan")->where("id", $id)->update([
+            "name" => $request->editname,
+            "kategori" => $request->editkategori,
+            "status" => $request->editstatus,
+        ]);
+
+
+        return redirect(route("dashboard"));
 
     }
 }
