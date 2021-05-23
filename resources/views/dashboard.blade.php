@@ -227,7 +227,29 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                                <a href="javascript:void(0)" class="btn btn-danger shadow btn-xs sharp me-1" data-bs-toggle="modal" data-bs-target="{{__("#modal".$item->id)}}"><i class="fa fa-trash"></i></a>
+                                                <div class="modal fade" id={{__('modal'.$item->id)}} tabindex="-1" role="dialog"
+                                                     aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="exampleModalCenterTitle">Hapus Akun</h5>
+                                                                <a href="javascript:void(0);" class="btn-close" data-bs-dismiss="modal"></a>
+                                                            </div>
+                                                            <div class="modal-body text-center">
+                                                                <i class="fa fa-warning"
+                                                                   style="font-size: 100px; color: orange"></i>
+                                                                <p>{{__("Semua data periode ".$item->name." akan dihapus!")}}
+                                                                </p>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <a href="{{route("deleteperiode", $item->id)}}">
+                                                                    <button type="button" class="btn btn-danger">Hapus Data</button>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </td>
                                     </tr>

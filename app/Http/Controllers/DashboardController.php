@@ -34,7 +34,7 @@ class DashboardController extends Controller
         return redirect()->route('dashboard')->with("saved", "Data Penerimaan Berhasil ditambahkan");
     }
 
-    public function editpenerimaan(Request $request, $id){
+    public function editperiode(Request $request, $id){
         $session = $request->session()->get("username");
 
         if ($session == null){
@@ -52,9 +52,18 @@ class DashboardController extends Controller
             "kategori" => $request->editkategori,
             "status" => $request->editstatus,
         ]);
+        return redirect(route("dashboard"));
+    }
 
+    public function deleteperiode(Request $request, $id){
+        $session = $request->session()->get("username");
+
+        if ($session == null){
+            return redirect(route('index'));
+        }
+
+        DB::table("periode_penerimaan")->where("id", $id)->delete();
 
         return redirect(route("dashboard"));
-
     }
 }
