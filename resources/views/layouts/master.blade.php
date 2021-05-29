@@ -108,9 +108,9 @@
                         <span class="nav-text">Dashboard</span>
                     </a>
                     <ul aria-expanded="false">
-                        <li><a href="#">Data calon Karyawan</a></li>
-                        <li><a href="index-2.html">Data Karyawan</a></li>
-                        <li><a href="reviews.html">Data Reviews</a></li>
+                        <li><a href="#">Data calon Penerima</a></li>
+                        <li><a href="#">Data Penerima</a></li>
+                        <li><a href="#">Data Reviews</a></li>
                     </ul>
 
                 </li>
@@ -153,8 +153,6 @@
         Sidebar end
     ***********************************-->
 
-
-
     <!--**********************************
         Footer start
     ***********************************-->
@@ -180,6 +178,8 @@
 
 </div>
 
+</body>
+
 <!--**********************************
         Scripts
     ***********************************-->
@@ -190,8 +190,6 @@
 <script src="{{asset("assets/vendor/chart.js/Chart.bundle.min.js")}}"></script>
 <script src="{{asset("assets/vendor/bootstrap-datetimepicker/js/moment.js")}}"></script>
 <script src="{{asset("assets/vendor/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js")}}"></script>
-
-
 
 <script src="{{asset("assets/vendor/jquery-nice-select/js/jquery.nice-select.min.js")}}"></script>
 
@@ -212,10 +210,6 @@
 <script src="{{asset("assets/js/deznav-init.js")}}"></script>
 <script src="{{asset("assets/js/demo.js")}}"></script>
 <script src="{{asset("assets/js/styleSwitcher.js")}}"></script>
-
-</body>
-
-
 
 
 
