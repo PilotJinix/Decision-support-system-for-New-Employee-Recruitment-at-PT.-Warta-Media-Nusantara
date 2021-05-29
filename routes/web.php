@@ -17,11 +17,11 @@ use Illuminate\Support\Facades\Route;
 //    return view('dashboard');
 //});
 
-Route::get('/', 'Auth\LoginController@index')->name('index');
-Route::post("auten", 'Auth\LoginController@authenticate')->name('login');
-Route::get('logout', 'Auth\LoginController@logout')->name('logout');
+Route::get('/', 'Admin\Auth\LoginController@index')->name('index');
+Route::post("auten", 'Admin\Auth\LoginController@authenticate')->name('login');
+Route::get('logout', 'Admin\Auth\LoginController@logout')->name('logout');
 
-Route::get('dashboard', 'DashboardController@index' )->name('dashboard');
-Route::post('dashboard/create-periode', 'DashboardController@periode')->name('create-periode');
-Route::post("dashboard/editpenerimaan/{id}", "DashboardController@editperiode")->name("edit-penerimaan");
-Route::get("dashboard/deleteperiode/{id}", "DashboardController@deleteperiode")->name("deleteperiode");
+Route::get('dashboard', 'Admin\DashboardController@index' )->name('dashboard');
+Route::post('dashboard/create-periode', 'Admin\DashboardController@periode')->name('create-periode');
+Route::post("dashboard/editpenerimaan/{id}", "Admin\DashboardController@editperiode")->name("edit-penerimaan");
+Route::get("dashboard/deleteperiode/{id}", "Admin\DashboardController@deleteperiode")->name("deleteperiode");

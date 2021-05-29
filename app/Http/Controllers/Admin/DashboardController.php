@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -17,7 +18,7 @@ class DashboardController extends Controller
         $data_periode = DB::table("periode_penerimaan")->paginate(10);
 
         $akun = DB::table('users')->where('username', $session)->first();
-        return view('admin.dashboard.dashboard', compact("akun", "data_periode"));
+        return view('dashboard', compact("akun", "data_periode"));
     }
 
     public function periode(Request $request){
