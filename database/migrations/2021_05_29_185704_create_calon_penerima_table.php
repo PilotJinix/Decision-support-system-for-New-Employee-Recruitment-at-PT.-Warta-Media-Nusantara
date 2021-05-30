@@ -15,7 +15,15 @@ class CreateCalonPenerimaTable extends Migration
     {
         Schema::create('calon_penerima', function (Blueprint $table) {
             $table->bigIncrements("id");
-            $table->bigInteger()
+            $table->bigInteger("id_periode")->unsigned();
+            $table->foreign("id_periode")->references("id")->on("periode_penerimaan")->onDelete("cascade")->onUpdate("cascade");
+            $table->string("nama");
+            $table->string("nim");
+            $table->string("c1");
+            $table->string("c2");
+            $table->string("c3");
+            $table->string("c4");
+            $table->enum("status", ["Lolos", "Tidak Lolos", "Sedang diproses"])->default("Sedang diproses");
             $table->timestamps();
         });
     }

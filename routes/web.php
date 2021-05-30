@@ -22,3 +22,5 @@ Route::get('dashboard', 'Admin\DashboardController@index' )->name('dashboard');
 Route::post('dashboard/create-periode', 'Admin\DashboardController@periode')->name('create-periode');
 Route::post("dashboard/editpenerimaan/{id}", "Admin\DashboardController@editperiode")->name("edit-penerimaan");
 Route::get("dashboard/deleteperiode/{id}", "Admin\DashboardController@deleteperiode")->name("deleteperiode");
+
+Route::get('calonpenerima', 'Admin\CalonPenerimaController@index' )->name('calonpenerima');

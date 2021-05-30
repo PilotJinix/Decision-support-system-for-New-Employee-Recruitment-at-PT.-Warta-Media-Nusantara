@@ -108,7 +108,7 @@
                         <span class="nav-text">Dashboard</span>
                     </a>
                     <ul aria-expanded="false">
-                        <li><a href="#">Data calon Penerima</a></li>
+                        <li><a href="{{route("calonpenerima")}}">Data calon Penerima</a></li>
                         <li><a href="#">Data Penerima</a></li>
                         <li><a href="#">Data Reviews</a></li>
                     </ul>

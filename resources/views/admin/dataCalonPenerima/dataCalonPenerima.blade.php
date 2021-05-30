@@ -1,4 +1,4 @@
-@extends("layouts.master")
+@extends("admin.layouts.master")
 @section("content")
     <!--**********************************
             Content body start
@@ -56,8 +56,8 @@
                                     <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th>Name</th>
-                                        <th>Kategori</th>
+                                        <th>Nama</th>
+                                        <th>Nim</th>
                                         <th>Periode</th>
                                         <th>Status</th>
                                         <th>Action</th>
@@ -66,18 +66,21 @@
                                     <tbody>
                                     @php
                                         $i = 1;
+
                                     @endphp
-                                    @foreach($data_periode as $item)
+                                    @foreach($datacalon as $item)
                                         <tr>
                                             <td>{{$i++}}</td>
-                                            <td>{{__($item->name)}}</td>
-                                            <td>{{__($item->kategori)}}</td>
-                                            <td>{{__($item->id)}}</td>
+                                            <td>{{__($item->nama)}}</td>
+                                            <td>{{__($item->nim)}}</td>
+                                            <td>{{__($item->id_periode)}}</td>
                                             <td>
-                                                @if($item->status == "0")
-                                                    <span class="badge light badge-success">Dibuka</span>
+                                                @if($item->status == "Lolos")
+                                                    <span class="badge light badge-success">Lolos</span>
+                                                @elseif($item->status == "Tidak Lolos")
+                                                    <span class="badge light badge-danger">Tidak Lolos</span>
                                                 @else
-                                                    <span class="badge light badge-warning">Ditutup</span>
+                                                    <span class="badge light badge-info">Sedang diproses</span>
                                                 @endif
                                             </td>
                                             <td>
@@ -95,18 +98,18 @@
                                                                         @csrf
                                                                         <div class="mb-3">
                                                                             <label class="text-black font-w500">Name</label>
-                                                                            <input type="text" class="form-control" name="editname" value="{{__($item->name)}}">
+                                                                            <input type="text" class="form-control" name="editname" value="{{__($item->nama)}}">
                                                                         </div>
                                                                         <div class="mb-3">
                                                                             <label class="text-black font-w500">Kategori</label>
                                                                             <select type="text" class="form-control form-select" name="editkategori">
-                                                                                @if($item->kategori == "Internship")
-                                                                                    <option value="Internship" selected>Internship</option>
-                                                                                    <option value="Formal">Formal</option>
-                                                                                @else
-                                                                                    <option value="Internship">Internship</option>
-                                                                                    <option value="Formal" selected>Formal</option>
-                                                                                @endif
+{{--                                                                                @if($item->kategori == "Internship")--}}
+{{--                                                                                    <option value="Internship" selected>Internship</option>--}}
+{{--                                                                                    <option value="Formal">Formal</option>--}}
+{{--                                                                                @else--}}
+{{--                                                                                    <option value="Internship">Internship</option>--}}
+{{--                                                                                    <option value="Formal" selected>Formal</option>--}}
+{{--                                                                                @endif--}}
                                                                             </select>
                                                                         </div>
                                                                         <div class="mb-3">
@@ -141,7 +144,7 @@
                                                                 <div class="modal-body text-center">
                                                                     <i class="fa fa-warning"
                                                                        style="font-size: 100px; color: orange"></i>
-                                                                    <p>{{__("Semua data periode ".$item->name." akan dihapus!")}}
+                                                                    <p>{{__("Semua data periode ".$item->nama." akan dihapus!")}}
                                                                     </p>
                                                                 </div>
                                                                 <div class="modal-footer">
