@@ -24,3 +24,7 @@ Route::post("dashboard/editpenerimaan/{id}", "Admin\DashboardController@editperi
 Route::get("dashboard/deleteperiode/{id}", "Admin\DashboardController@deleteperiode")->name("deleteperiode");
 
 Route::get('calonpenerima', 'Admin\CalonPenerimaController@index' )->name('calonpenerima');
+
+Route::get('kriteria-benefit', 'Admin\BenefitController@index' )->name('benefit');
+Route::post('kriteria-benefit/create-benefit', 'Admin\BenefitController@benefit')->name('create-benefit');
+Route::post('kriteria-benefit/editbenefit/{id}', 'Admin\BenefitController@editbenefit')->name('edit-benefit');

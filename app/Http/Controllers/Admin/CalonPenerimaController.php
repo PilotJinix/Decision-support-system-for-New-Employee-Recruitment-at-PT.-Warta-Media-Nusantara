@@ -20,8 +20,6 @@ class CalonPenerimaController extends Controller
         $dataperiode = DB::table("periode_penerimaan")->where("status", 0)->first();
         $datacalon = DB::table("calon_penerima")->where("id_periode", $dataperiode->id)->paginate(10);
 
-//        var_dump($datacalon);
-
         return view("admin.dataCalonPenerima.dataCalonPenerima", compact("datacalon", "akun"));
     }
 }

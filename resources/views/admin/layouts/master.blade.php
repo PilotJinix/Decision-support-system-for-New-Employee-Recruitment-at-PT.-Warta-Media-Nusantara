@@ -36,7 +36,7 @@
        Nav header start
    ***********************************-->
     <div class="nav-header">
-        <a href="index.html" class="brand-logo">
+        <a href="{{route("dashboard")}}" class="brand-logo">
             <!-- <img class="logo-abbr" src="./images/logo.png" alt="">
             <div class="brand-title">Ventic</div> -->
             <svg class="logo-abbr"  width="54" height="54" viewBox="0 0 54 54" fill="none">
@@ -114,33 +114,29 @@
                     </ul>
 
                 </li>
-                <li><a href="widget-basic.html" class="ai-icon" aria-expanded="false">
+                <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                         <i class="flaticon-013-checkmark"></i>
                         <span class="nav-text">Kriteria</span>
                     </a>
+                    <ul aria-expanded="false">
+                        <li><a href="{{route("benefit")}}">Data Benefit</a></li>
+                        <li><a href="#">Tabel Normalisasi</a></li>
+                        <li><a href="#">Tabel Ranking</a></li>
+                        <li><a href="#">Tabel Peringkat</a></li>
+                    </ul>
                 </li>
                 <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                         <i class="flaticon-022-copy"></i>
                         <span class="nav-text">Sistem SAW</span>
                     </a>
                     <ul aria-expanded="false">
-                        <li><a href="#">Tabel Nilai Alternatif</a></li>
+                        <li><a href="#">Data Benefit</a></li>
                         <li><a href="#">Tabel Normalisasi</a></li>
                         <li><a href="#">Tabel Ranking</a></li>
                         <li><a href="#">Tabel Peringkat</a></li>
                     </ul>
                 </li>
-                <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-                        <i class="flaticon-022-copy"></i>
-                        <span class="nav-text">Sistem WP</span>
-                    </a>
-                    <ul aria-expanded="false">
-                        <li><a href="#">Tabel Nilai Alternatif</a></li>
-                        <li><a href="#">Tabel Normalisasi</a></li>
-                        <li><a href="#">Tabel Ranking</a></li>
-                        <li><a href="#">Tabel Peringkat</a></li>
-                    </ul>
-                </li>
+
             </ul>
             <div class="plus-box">
                 <p><strong>Sistem Penunjang Pengambilan Keputusan</strong></p>
