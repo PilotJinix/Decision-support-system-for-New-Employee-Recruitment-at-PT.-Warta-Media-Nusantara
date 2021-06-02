@@ -15,8 +15,10 @@ class CreateBobotKriteriaTable extends Migration
     {
         Schema::create('bobot_kriteria', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger("id_kriteria")->unsigned();
-            $table->foreign("id_kriteria")->references("id")->on("kriteria_benefit")->onDelete("cascade")->onUpdate("cascade");
+            $table->bigInteger("id_periode")->unsigned();
+            $table->foreign("id_periode")->references("id")->on("periode_penerimaan")->onDelete("cascade")->onUpdate("cascade");
+            $table->string("nama_bobot");
+            $table->enum("bobot", ["1", "2", "3", "4", "5"]);
             $table->timestamps();
         });
     }

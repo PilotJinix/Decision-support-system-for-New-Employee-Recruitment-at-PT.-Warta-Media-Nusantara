@@ -29,3 +29,8 @@ Route::get('kriteria-benefit', 'Admin\BenefitController@index' )->name('benefit'
 Route::post('kriteria-benefit/create-benefit', 'Admin\BenefitController@benefit')->name('create-benefit');
 Route::post('kriteria-benefit/editbenefit/{id}', 'Admin\BenefitController@editbenefit')->name('edit-benefit');
 Route::get("kriteria-benefit/deletebenefit/{id}", "Admin\BenefitController@deletebenefit")->name("deletebenefit");
+
+Route::get('kriteria-bobot', 'Admin\BobotController@index' )->name('bobot');
+Route::post('kriteria-bobot/create-bobot', 'Admin\BobotController@bobot')->name('create-bobot');
+Route::post('kriteria-bobot/editbobot/{id}', 'Admin\BobotController@editbobot')->name('edit-bobot');
+Route::get("kriteria-bobot/deletebobot/{id}", "Admin\BobotController@deletebobot")->name("deletebobot");
