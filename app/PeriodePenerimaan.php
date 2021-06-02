@@ -14,4 +14,7 @@ class PeriodePenerimaan extends Model{
         "status"
     ];
 
+    public function penerima(){
+        return $this->hasMany("App\CalonPenerima");
+    }
 }

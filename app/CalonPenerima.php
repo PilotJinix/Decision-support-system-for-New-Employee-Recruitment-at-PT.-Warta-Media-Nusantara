@@ -12,4 +12,8 @@ class CalonPenerima extends Model
         "id_periode", "nama", "nim", "c1", "c2", "c3", "c4", "status"
     ];
 
+    public function periode(){
+        return $this->belongsTo("App\PeriodePenerimaan");
+    }
+
 }

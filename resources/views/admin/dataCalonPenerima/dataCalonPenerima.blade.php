@@ -66,7 +66,6 @@
                                     <tbody>
                                     @php
                                         $i = 1;
-
                                     @endphp
                                     @foreach($datacalon as $item)
                                         <tr>

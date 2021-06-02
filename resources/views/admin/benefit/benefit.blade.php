@@ -30,6 +30,16 @@
                                             <form method="POST" action="{{route("create-benefit")}}">
                                                 @csrf
                                                 <div class="mb-3">
+                                                    <label class="text-black font-w500">Nama Periode</label>
+                                                    <select type="text" class="form-control form-select" name="id_periode">
+                                                        <option selected>Pilih Periode</option>
+                                                        @foreach($dataperiode as $data)
+                                                            <option value="{{$data->id}}" {{old('dataperiode') == $data->id ? 'selected' : ''}}>{{$data->name}}</option>
+                                                        @endforeach
+
+                                                    </select>
+                                                </div>
+                                                <div class="mb-3">
                                                     <label class="text-black font-w500">Name</label>
                                                     <select type="text" class="form-control form-select" name="name">
                                                         <option selected>Pilih Status</option>
@@ -62,8 +72,9 @@
                                     <thead>
                                     <tr>
                                         <th>No</th>
+                                        <th>Nama Periode</th>
                                         <th>Nama</th>
-                                        <th>Sifat</th>
+                                        <th>Type</th>
                                         <th>Action</th>
                                     </tr>
                                     </thead>
@@ -74,6 +85,7 @@
                                     @foreach($databenefit as $item)
                                         <tr>
                                             <td>{{$i++}}</td>
+                                            <td>{{__($item->name)}}</td>
                                             <td>{{__($item->nama_kriteria)}}</td>
                                             <td>
                                                 @if($item->sifat_kriteria == "max")
@@ -135,7 +147,7 @@
                                                                     </p>
                                                                 </div>
                                                                 <div class="modal-footer">
-                                                                    <a href="{{route("deleteperiode", $item->id)}}">
+                                                                    <a href="{{route("deletebenefit", $item->id)}}">
                                                                         <button type="button" class="btn btn-danger">Hapus Data</button>
                                                                     </a>
                                                                 </div>

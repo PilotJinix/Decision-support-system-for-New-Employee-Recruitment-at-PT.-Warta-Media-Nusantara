@@ -15,20 +15,29 @@ class BenefitController extends Controller
             return redirect(route('index'));
         }
         $akun = DB::table('users')->where('username', $session)->first();
-        $databenefit = DB::table("kriteria_benefit")->paginate(10);
 
-        return view("admin.benefit.benefit", compact("akun", "databenefit"));
+
+        $dataperiode = DB::table("periode_penerimaan")->where("status", 0)->get();
+        $databenefit = DB::table("kriteria_benefit")
+            ->join("periode_penerimaan", "periode_penerimaan.id", "=", "kriteria_benefit.id_periode")
+            ->select("periode_penerimaan.name","kriteria_benefit.*")->latest()->paginate(10);
+
+
+        return view("admin.benefit.benefit", compact("akun", "databenefit", "dataperiode"));
     }
 
     public function benefit(Request $request){
         $request->validate([
+            "id_periode" => "required",
             "name" => "required|string",
             "sifat_kriteria" => "required|string"
         ]);
 
         DB::table("kriteria_benefit")->insert([
-           "nama_kriteria" => $request->name,
-           "sifat_kriteria" => $request->sifat_kriteria
+            "id_periode"=> $request->id_periode,
+            "nama_kriteria" => $request->name,
+            "sifat_kriteria" => $request->sifat_kriteria,
+
         ]);
 
         return redirect()->route('benefit')->with("saved", "Data Berhasil ditambahkan");
@@ -54,4 +63,18 @@ class BenefitController extends Controller
 
         return redirect(route("benefit"));
     }
+
+    public function deletebenefit(Request $request, $id){
+        $session = $request->session()->get("username");
+
+        if ($session == null){
+            return redirect(route('index'));
+        }
+        $akun = DB::table('users')->where('username', $session)->first();
+
+        DB::table("kriteria_benefit")->where("id", $id)->delete();
+
+        return redirect(route("benefit"));
+    }
+
 }

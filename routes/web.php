@@ -28,3 +28,4 @@ Route::get('calonpenerima', 'Admin\CalonPenerimaController@index' )->name('calon
 Route::get('kriteria-benefit', 'Admin\BenefitController@index' )->name('benefit');
 Route::post('kriteria-benefit/create-benefit', 'Admin\BenefitController@benefit')->name('create-benefit');
 Route::post('kriteria-benefit/editbenefit/{id}', 'Admin\BenefitController@editbenefit')->name('edit-benefit');
+Route::get("kriteria-benefit/deletebenefit/{id}", "Admin\BenefitController@deletebenefit")->name("deletebenefit");

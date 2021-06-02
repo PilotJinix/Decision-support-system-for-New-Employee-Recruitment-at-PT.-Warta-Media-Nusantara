@@ -15,6 +15,8 @@ class CreateKriteriaBenefitTable extends Migration
     {
         Schema::create('kriteria_benefit', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger("id_periode")->unsigned();
+            $table->foreign("id_periode")->references("id")->on("periode_penerimaan")->onDelete("cascade")->onUpdate("cascade");
             $table->string("nama_kriteria");
             $table->enum("sifat_kriteria", ["max", "min"]);
             $table->timestamps();
