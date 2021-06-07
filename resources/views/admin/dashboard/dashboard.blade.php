@@ -134,8 +134,7 @@
                                                     <label class="text-black font-w500">Kategori</label>
                                                     <select type="text" class="form-control form-select" name="kategori">
                                                         <option selected>Pilih Status</option>
-                                                        <option value="Internship">Internship</option>
-                                                        <option value="Formal">Formal</option>
+                                                        <option value="Beasiswa">Beasiswa</option>
                                                     </select>
                                                 </div>
                                                 <div class="form-group">
@@ -197,25 +196,14 @@
                                                                         <div class="mb-3">
                                                                             <label class="text-black font-w500">Kategori</label>
                                                                             <select type="text" class="form-control form-select" name="editkategori">
-                                                                                @if($item->kategori == "Internship")
-                                                                                    <option value="Internship" selected>Internship</option>
-                                                                                    <option value="Formal">Formal</option>
-                                                                                @else
-                                                                                    <option value="Internship">Internship</option>
-                                                                                    <option value="Formal" selected>Formal</option>
-                                                                                @endif
+                                                                                <option value="Beasiswa" {{$item->kategori == "Beasiswa" ? "selected" : ""}}>Beasiswa</option>
                                                                             </select>
                                                                         </div>
                                                                         <div class="mb-3">
                                                                             <label class="text-black font-w500">Status Penerimaan</label>
                                                                             <select type="text" class="form-control form-select" name="editstatus">
-                                                                                @if($item->status == "0")
-                                                                                    <option value="0" selected>Dibuka</option>
-                                                                                    <option value="1">Ditutup</option>
-                                                                                @else
-                                                                                    <option value="0">Dibuka</option>
-                                                                                    <option value="1" selected>Ditutup</option>
-                                                                                @endif
+                                                                                <option value="0" {{$item->status == "0" ? "selected" : ""}}>Dibuka</option>
+                                                                                <option value="1" {{$item->status == "1" ? "selected" : ""}}>Ditutup</option>
                                                                             </select>
                                                                         </div>
                                                                         <div class="form-group">

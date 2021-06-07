@@ -43,18 +43,29 @@
                                                     <label class="text-black font-w500">Name</label>
                                                     <select type="text" class="form-control form-select" name="name">
                                                         <option selected>Pilih Status</option>
-                                                        <option value="IPK">IPK</option>
-                                                        <option value="Semester">SEMESTER</option>
-                                                        <option value="Prestasi">PRESTASI</option>
-                                                        <option value="Gaji Orang Tua">GAJI ORANG TUA</option>
+                                                        <option value="Dokumen" >Dokumen</option>
+                                                        <option value="Prestasi dan Pengalaman">Prestasi dan Pengalaman</option>
+                                                        <option value="Wawancara">Wawancara</option>
+                                                        <option value="Gaji Orang Tua">Gaji Orang Tua</option>
                                                     </select>
                                                 </div>
                                                 <div class="mb-3">
-                                                    <label class="text-black font-w500">Kriteria Sifat</label>
+                                                    <label class="text-black font-w500">Kriteria Type</label>
                                                     <select type="text" class="form-control form-select" name="sifat_kriteria">
                                                         <option selected>Pilih Status</option>
                                                         <option value="max">MAXIMUM</option>
                                                         <option value="min">MINIMUM</option>
+                                                    </select>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="text-black font-w500">Kriteria Bobot</label>
+                                                    <select type="text" class="form-control form-select" name="bobot_kriteria">
+                                                        <option selected>Pilih Status</option>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
                                                     </select>
                                                 </div>
                                                 <div class="form-group">
@@ -75,6 +86,7 @@
                                         <th>Nama Periode</th>
                                         <th>Nama</th>
                                         <th>Type</th>
+                                        <th>Bobot</th>
                                         <th>Action</th>
                                     </tr>
                                     </thead>
@@ -94,6 +106,7 @@
                                                     <span class="badge light badge-danger">MINIMUM</span>
                                                 @endif
                                             </td>
+                                            <td>{{__($item->bobot_kriteria)}}</td>
                                             <td>
                                                 <div class="d-flex">
                                                     <a href="javascript:void(0)" class="btn btn-primary shadow btn-xs sharp me-1" data-bs-toggle="modal" data-bs-target="{{__("#editkegiatan".$item->id)}}"><i class="fa fa-pencil"></i></a>
@@ -110,17 +123,27 @@
                                                                         <div class="mb-3">
                                                                             <label class="text-black font-w500">Name</label>
                                                                             <select type="text" class="form-control form-select" name="editnama">
-                                                                                <option value="IPK" {{$item->nama_kriteria == "IPK" ? "selected" : ""}}>IPK</option>
-                                                                                <option value="Semester" {{$item->nama_kriteria == "Semester" ? "selected" : ""}}>Semester</option>
-                                                                                <option value="Prestasi" {{$item->nama_kriteria == "Prestasi" ? "selected" : ""}}>Prestasi</option>
+                                                                                <option value="Dokumen" {{$item->nama_kriteria == "Dokumen" ? "selected" : ""}}>Dokumen</option>
+                                                                                <option value="Prestasi dan Pengalaman" {{$item->nama_kriteria == "Prestasi dan Pengalaman" ? "selected" : ""}}>Prestasi dan Pengalaman</option>
+                                                                                <option value="Wawancara" {{$item->nama_kriteria == "Wawancara" ? "selected" : ""}}>Wawancara</option>
                                                                                 <option value="Gaji Orang Tua" {{$item->nama_kriteria == "Gaji Orang Tua" ? "selected" : ""}}>Gaji Orang Tua</option>
                                                                             </select>
                                                                         </div>
                                                                         <div class="mb-3">
-                                                                            <label class="text-black font-w500">Sifat</label>
+                                                                            <label class="text-black font-w500">Type</label>
                                                                             <select type="text" class="form-control form-select" name="editsifat">
                                                                                 <option value="max" {{$item->sifat_kriteria == "max" ? "selected" : ""}}>MAXIMUM</option>
                                                                                 <option value="min" {{$item->sifat_kriteria == "min" ? "selected" : ""}}>MINIMUM</option>
+                                                                            </select>
+                                                                        </div>
+                                                                        <div class="mb-3">
+                                                                            <label class="text-black font-w500">Bobot</label>
+                                                                            <select type="text" class="form-control form-select" name="editbobot">
+                                                                                <option value="1" {{$item->bobot_kriteria == "1" ? "selected" : ""}}>1</option>
+                                                                                <option value="2" {{$item->bobot_kriteria == "2" ? "selected" : ""}}>2</option>
+                                                                                <option value="3" {{$item->bobot_kriteria == "3" ? "selected" : ""}}>3</option>
+                                                                                <option value="4" {{$item->bobot_kriteria == "4" ? "selected" : ""}}>4</option>
+                                                                                <option value="5" {{$item->bobot_kriteria == "5" ? "selected" : ""}}>5</option>
                                                                             </select>
                                                                         </div>
                                                                         <div class="form-group">

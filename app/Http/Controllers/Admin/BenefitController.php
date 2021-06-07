@@ -20,6 +20,7 @@ class BenefitController extends Controller
         $dataperiode = DB::table("periode_penerimaan")->where("status", 0)->get();
         $databenefit = DB::table("kriteria_benefit")
             ->join("periode_penerimaan", "periode_penerimaan.id", "=", "kriteria_benefit.id_periode")
+            ->where("periode_penerimaan.status", 0)
             ->select("periode_penerimaan.name","kriteria_benefit.*")->latest()->paginate(10);
 
 
@@ -30,13 +31,16 @@ class BenefitController extends Controller
         $request->validate([
             "id_periode" => "required",
             "name" => "required|string",
-            "sifat_kriteria" => "required|string"
+            "sifat_kriteria" => "required|string",
+            "bobot_kriteria" => "required|string"
         ]);
 
         DB::table("kriteria_benefit")->insert([
             "id_periode"=> $request->id_periode,
             "nama_kriteria" => $request->name,
-            "sifat_kriteria" => $request->sifat_kriteria,
+            "bobot_kriteria" => $request->bobot_kriteria,
+            "sifat_kriteria" => $request->sifat_kriteria
+
 
         ]);
 
@@ -53,12 +57,14 @@ class BenefitController extends Controller
 
         $request -> validate([
             "editnama" => "required|string",
-            "editsifat" => "required|string"
+            "editsifat" => "required|string",
+            "editbobot" => "required|string"
         ]);
 
         DB::table("kriteria_benefit")->where("id", $id)->update([
             "nama_kriteria" => $request->editnama,
-            "sifat_kriteria" => $request->editsifat
+            "sifat_kriteria" => $request->editsifat,
+            "bobot_kriteria" => $request->editbobot,
         ]);
 
         return redirect(route("benefit"));
