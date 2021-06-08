@@ -125,17 +125,17 @@
                         <li><a href="#">Tabel Peringkat</a></li>
                     </ul>
                 </li>
-                <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-                        <i class="flaticon-022-copy"></i>
-                        <span class="nav-text">Sistem SAW</span>
-                    </a>
-                    <ul aria-expanded="false">
-                        <li><a href="#">Data Benefit</a></li>
-                        <li><a href="#">Tabel Normalisasi</a></li>
-                        <li><a href="#">Tabel Ranking</a></li>
-                        <li><a href="#">Tabel Peringkat</a></li>
-                    </ul>
-                </li>
+{{--                <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">--}}
+{{--                        <i class="flaticon-022-copy"></i>--}}
+{{--                        <span class="nav-text">Sistem SAW</span>--}}
+{{--                    </a>--}}
+{{--                    <ul aria-expanded="false">--}}
+{{--                        <li><a href="#">Data Benefit</a></li>--}}
+{{--                        <li><a href="#">Tabel Normalisasi</a></li>--}}
+{{--                        <li><a href="#">Tabel Ranking</a></li>--}}
+{{--                        <li><a href="#">Tabel Peringkat</a></li>--}}
+{{--                    </ul>--}}
+{{--                </li>--}}
 
             </ul>
             <div class="plus-box">

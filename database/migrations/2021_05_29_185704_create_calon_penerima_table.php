@@ -19,10 +19,11 @@ class CreateCalonPenerimaTable extends Migration
             $table->foreign("id_periode")->references("id")->on("periode_penerimaan")->onDelete("cascade")->onUpdate("cascade");
             $table->string("nama");
             $table->string("nim");
-            $table->string("c1");
-            $table->string("c2");
-            $table->string("c3");
-            $table->string("c4");
+            $table->string("dokumen");
+            $table->string("prestasi");
+            $table->string("essay");
+            $table->string("gaji");
+            $table->string("data");
             $table->enum("status", ["Lolos", "Tidak Lolos", "Sedang diproses"])->default("Sedang diproses");
             $table->timestamps();
         });

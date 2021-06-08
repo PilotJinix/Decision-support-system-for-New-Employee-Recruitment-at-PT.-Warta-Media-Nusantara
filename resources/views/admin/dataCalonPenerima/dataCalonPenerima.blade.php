@@ -27,18 +27,64 @@
                                             <a href="javascript:void(0);" class="btn-close" data-bs-dismiss="modal"></a>
                                         </div>
                                         <div class="modal-body">
-                                            <form method="POST" action="{{route("create-periode")}}">
+                                            <form method="POST" action="{{route("create-calonpenerima")}}">
                                                 @csrf
+                                                <div class="mb-3">
+                                                    <label class="text-black font-w500">Nama Periode</label>
+                                                    <select type="text" class="form-control form-select" name="id_periode">
+                                                        <option selected>Pilih Periode</option>
+                                                        @foreach($dataperiode as $data)
+                                                            <option value="{{$data->id}}" {{old('dataperiode') == $data->id ? 'selected' : ''}}>{{$data->name}}</option>
+                                                        @endforeach
+                                                    </select>
+                                                </div>
                                                 <div class="mb-3">
                                                     <label class="text-black font-w500">Name</label>
                                                     <input type="text" class="form-control" name="name">
                                                 </div>
                                                 <div class="mb-3">
-                                                    <label class="text-black font-w500">Kategori</label>
-                                                    <select type="text" class="form-control form-select" name="kategori">
+                                                    <label class="text-black font-w500">Nim</label>
+                                                    <input type="text" class="form-control" name="nim">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="text-black font-w500">Dokumen</label>
+                                                    <select type="text" class="form-control form-select" name="dokumen">
                                                         <option selected>Pilih Status</option>
-                                                        <option value="Internship">Internship</option>
-                                                        <option value="Formal">Formal</option>
+                                                        <option value="90">Lengkap</option>
+                                                        <option value="10">Tidak Lengkap</option>
+                                                    </select>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="text-black font-w500">Prestasi IPK</label>
+                                                    <select type="text" class="form-control form-select" name="ipk">
+                                                        <option selected>Pilih Status</option>
+                                                        <option value="90">IPK > 3.51</option>
+                                                        <option value="75">3.25 > IPK < 3.50</option>
+                                                        <option value="50">3.00 > IPK < 3.25</option>
+                                                        <option value="30">2.75 > IPK < 3.00</option>
+                                                        <option value="0">IPK < 2.75</option>
+                                                    </select>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="text-black font-w500">Wawancara</label>
+                                                    <select type="text" class="form-control form-select" name="wawancara">
+                                                        <option selected>Pilih Status</option>
+                                                        <option value="90">Sangat Baik</option>
+                                                        <option value="75">Baik</option>
+                                                        <option value="50">Cukup</option>
+                                                        <option value="30">Kurang</option>
+                                                        <option value="0">Sangat Kurang</option>
+                                                    </select>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="text-black font-w500">Gaji Orang Tua</label>
+                                                    <select type="text" class="form-control form-select" name="gaji">
+                                                        <option selected>Pilih Status</option>
+                                                        <option value="90">Gaji >= 3.500.000</option>
+                                                        <option value="75">2.500.000 >= Gaji <= 3.500.000</option>
+                                                        <option value="50">1.500.000 >= Gaji <= 2.500.000</option>
+                                                        <option value="30">500.000 >= Gaji <= 1.500.000</option>
+                                                        <option value="0">Gaji < 500.000</option>
                                                     </select>
                                                 </div>
                                                 <div class="form-group">
@@ -59,6 +105,10 @@
                                         <th>Nama</th>
                                         <th>Nim</th>
                                         <th>Periode</th>
+                                        <th>Dokumen</th>
+                                        <th>Prestasi Pengalaman</th>
+                                        <th>Wawancara</th>
+                                        <th>Gaji Orang Tua</th>
                                         <th>Status</th>
                                         <th>Action</th>
                                     </tr>
@@ -72,7 +122,11 @@
                                             <td>{{$i++}}</td>
                                             <td>{{__($item->nama)}}</td>
                                             <td>{{__($item->nim)}}</td>
-                                            <td>{{__($item->id_periode)}}</td>
+                                            <td>{{__($item->name)}}</td>
+                                            <td>{{__($item->dokumen)}}</td>
+                                            <td>{{__($item->prestasi)}}</td>
+                                            <td>{{__($item->wawancara)}}</td>
+                                            <td>{{__($item->gaji)}}</td>
                                             <td>
                                                 @if($item->status == "Lolos")
                                                     <span class="badge light badge-success">Lolos</span>
@@ -93,34 +147,59 @@
                                                                     <a href="javascript:void(0);" class="btn-close" data-bs-dismiss="modal"></a>
                                                                 </div>
                                                                 <div class="modal-body">
-                                                                    <form method="POST" action="{{route("edit-penerimaan", $item->id)}}">
+                                                                    <form method="POST" action="{{route("edit-calonPenerima", $item->id)}}">
                                                                         @csrf
                                                                         <div class="mb-3">
                                                                             <label class="text-black font-w500">Name</label>
                                                                             <input type="text" class="form-control" name="editname" value="{{__($item->nama)}}">
                                                                         </div>
                                                                         <div class="mb-3">
-                                                                            <label class="text-black font-w500">Kategori</label>
-                                                                            <select type="text" class="form-control form-select" name="editkategori">
-{{--                                                                                @if($item->kategori == "Internship")--}}
-{{--                                                                                    <option value="Internship" selected>Internship</option>--}}
-{{--                                                                                    <option value="Formal">Formal</option>--}}
-{{--                                                                                @else--}}
-{{--                                                                                    <option value="Internship">Internship</option>--}}
-{{--                                                                                    <option value="Formal" selected>Formal</option>--}}
-{{--                                                                                @endif--}}
+                                                                            <label class="text-black font-w500">Name</label>
+                                                                            <input type="text" class="form-control" name="editnim" value="{{__($item->nim)}}">
+                                                                        </div>
+                                                                        <div class="mb-3">
+                                                                            <label class="text-black font-w500">Dokumen</label>
+                                                                            <select type="text" class="form-control form-select" name="editdokumen">
+                                                                                <option value="90" {{$item->dokumen == "90" ? "selected" : ""}}>Lengkap</option>
+                                                                                <option value="10" {{$item->dokumen == "10" ? "selected" : ""}}>Tidak Lengkap</option>
+                                                                            </select>
+                                                                        </div>
+                                                                        <div class="mb-3">
+                                                                            <label class="text-black font-w500">Prestasi IPK</label>
+                                                                            <select type="text" class="form-control form-select" name="editipk">
+                                                                                <option value="90" {{$item->prestasi == "90" ? "selected" : ""}}>IPK > 3.51</option>
+                                                                                <option value="75" {{$item->prestasi == "75" ? "selected" : ""}}>3.25 > IPK < 3.50</option>
+                                                                                <option value="50" {{$item->prestasi == "50" ? "selected" : ""}} >3.00 > IPK < 3.25</option>
+                                                                                <option value="30" {{$item->prestasi == "30" ? "selected" : ""}} >2.75 > IPK < 3.00</option>
+                                                                                <option value="0" {{$item->prestasi == "0" ? "selected" : ""}} >IPK < 2.75</option>
+                                                                            </select>
+                                                                        </div>
+                                                                        <div class="mb-3">
+                                                                            <label class="text-black font-w500">Wawancara</label>
+                                                                            <select type="text" class="form-control form-select" name="editwawancara">
+                                                                                <option value="90" {{$item->wawancara == "90" ? "selected" : ""}}>Sangat Baik</option>
+                                                                                <option value="75" {{$item->wawancara == "75" ? "selected" : ""}}>Baik</option>
+                                                                                <option value="50" {{$item->wawancara == "50" ? "selected" : ""}}>Cukup</option>
+                                                                                <option value="30" {{$item->wawancara == "30" ? "selected" : ""}}>Kurang</option>
+                                                                                <option value="0" {{$item->wawancara == "0" ? "selected" : ""}}>Sangat Kurang</option>
+                                                                            </select>
+                                                                        </div>
+                                                                        <div class="mb-3">
+                                                                            <label class="text-black font-w500">Gaji Orang Tua</label>
+                                                                            <select type="text" class="form-control form-select" name="editgaji">
+                                                                                <option value="90" {{$item->gaji == "90" ? "selected" : ""}}>Gaji >= 3.500.000</option>
+                                                                                <option value="75" {{$item->gaji == "75" ? "selected" : ""}}>2.500.000 >= Gaji <= 3.500.000</option>
+                                                                                <option value="50" {{$item->gaji == "50" ? "selected" : ""}}>1.500.000 >= Gaji <= 2.500.000</option>
+                                                                                <option value="30" {{$item->gaji == "30" ? "selected" : ""}}>500.000 >= Gaji <= 1.500.000</option>
+                                                                                <option value="0" {{$item->gaji == "0" ? "selected" : ""}}>Gaji < 500.000</option>
                                                                             </select>
                                                                         </div>
                                                                         <div class="mb-3">
                                                                             <label class="text-black font-w500">Status Penerimaan</label>
                                                                             <select type="text" class="form-control form-select" name="editstatus">
-                                                                                @if($item->status == "0")
-                                                                                    <option value="0" selected>Dibuka</option>
-                                                                                    <option value="1">Ditutup</option>
-                                                                                @else
-                                                                                    <option value="0">Dibuka</option>
-                                                                                    <option value="1" selected>Ditutup</option>
-                                                                                @endif
+                                                                                <option value="Lolos" {{$item->status == "Lolos" ? "selected" : ""}}>Lolos</option>
+                                                                                <option value="Tidak Lolos" {{$item->status == "Tidak Lolos" ? "selected" : ""}}>Tidak Lolos</option>
+                                                                                <option value="Sedang diproses" {{$item->status == "Sedang diproses" ? "selected" : ""}}>Sedang diproses</option>
                                                                             </select>
                                                                         </div>
                                                                         <div class="form-group">

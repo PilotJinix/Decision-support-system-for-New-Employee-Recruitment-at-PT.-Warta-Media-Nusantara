@@ -30,46 +30,36 @@
                     <div class="row no-gutters">
                         <div class="col-xl-12">
                             <div class="auth-form">
-                                <h4 class="text-center mb-4">Sign in your account</h4>
-                                <form action="{{route('login')}}" method="POST">
+                                <h4 class="text-center mb-4">Sign up your account</h4>
+                                <form action="{{route('create-register')}}" method="POST">
                                     @csrf
                                     <div class="mb-3">
                                         <label class="mb-1"><strong>Username</strong></label>
-                                        <input type="text" class="form-control @error('username') is invalid @enderror" placeholder="admin" name="username" required >
-                                        @error('username')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{$message}}</strong>
-                                        </span>
-                                        @enderror
+                                        <input type="text" class="form-control" placeholder="username" name="username">
                                     </div>
-
+                                    <div class="mb-3">
+                                        <label class="mb-1"><strong>Nama Lengkap</strong></label>
+                                        <input type="text" class="form-control" placeholder="Nama Lengkap" name="nama">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="mb-1"><strong>Nomer Induk Mahasiswa</strong></label>
+                                        <input type="text" class="form-control" placeholder="Nomer Induk Mahasiswa" name="nim">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="mb-1"><strong>Email</strong></label>
+                                        <input type="email" class="form-control" placeholder="hello@example.com" name="email">
+                                    </div>
                                     <div class="mb-3">
                                         <label class="mb-1"><strong>Password</strong></label>
-                                        <input type="password" class="form-control @error('password') is invalid @enderror" placeholder="Password" name="password" required>
-                                        @error('password')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{$message}}</strong>
-                                        </span>
-                                        @enderror
+                                        <input type="password" class="form-control" placeholder="Password" name="password">
                                     </div>
-                                    <div class="row d-flex justify-content-between mt-4 mb-2">
-                                        <div class="mb-3">
-                                            <div class="form-check custom-checkbox ms-1">
-                                                <input type="checkbox" class="form-check-input" id="basic_checkbox_1">
-                                                <label class="form-check-label" for="basic_checkbox_1">Remember my preference</label>
-                                            </div>
-                                        </div>
+                                    <div class="text-center mt-4">
+                                        <button type="submit" class="btn btn-primary btn-block">Sign me up</button>
                                     </div>
-                                    <div class="text-center">
-                                        <button type="submit" class="btn btn-primary btn-block">Sign In</button>
-                                    </div>
-                                    <br>
-                                    @if(session()->has('error'))
-                                        <div class="ml-3 mr-3 w-100  alert alert-danger">
-                                            {{session()->get('error')}}
-                                        </div>
-                                    @endif
                                 </form>
+                                <div class="new-account mt-3">
+                                    <p>Already have an account? <a class="text-primary" href="{{route("index")}}">Sign in</a></p>
+                                </div>
                             </div>
                         </div>
                     </div>

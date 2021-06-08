@@ -40,8 +40,6 @@ class BenefitController extends Controller
             "nama_kriteria" => $request->name,
             "bobot_kriteria" => $request->bobot_kriteria,
             "sifat_kriteria" => $request->sifat_kriteria
-
-
         ]);
 
         return redirect()->route('benefit')->with("saved", "Data Berhasil ditambahkan");

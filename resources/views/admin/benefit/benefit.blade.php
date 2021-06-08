@@ -36,7 +36,6 @@
                                                         @foreach($dataperiode as $data)
                                                             <option value="{{$data->id}}" {{old('dataperiode') == $data->id ? 'selected' : ''}}>{{$data->name}}</option>
                                                         @endforeach
-
                                                     </select>
                                                 </div>
                                                 <div class="mb-3">

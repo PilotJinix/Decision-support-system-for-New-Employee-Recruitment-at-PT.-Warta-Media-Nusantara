@@ -18,8 +18,8 @@ class CreateKriteriaBenefitTable extends Migration
             $table->bigInteger("id_periode")->unsigned();
             $table->foreign("id_periode")->references("id")->on("periode_penerimaan")->onDelete("cascade")->onUpdate("cascade");
             $table->string("nama_kriteria");
-            $table->enum("bobot_kriteria", ["1", "2", "3", "4", "5"]);
-            $table->enum("sifat_kriteria", ["max", "min"]);
+            $table->enum("bobot_kriteria", ["10", "15", "20", "25", "30"]);
+            $table->enum("sifat_kriteria", ["benefit", "cost"]);
             $table->timestamps();
         });
     }

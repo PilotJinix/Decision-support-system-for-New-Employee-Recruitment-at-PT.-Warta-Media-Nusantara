@@ -65,11 +65,14 @@
                                     </div>
                                     <br>
                                     @if(session()->has('error'))
-                                    <div class="ml-3 mr-3 w-100  alert alert-danger">
-                                        {{session()->get('error')}}
-                                    </div>
+                                        <div class="ml-3 mr-3 w-100  alert alert-danger">
+                                            {{session()->get('error')}}
+                                        </div>
                                     @endif
                                 </form>
+                                <div class="new-account mt-3">
+                                    <p>Don't have an account? <a class="text-primary" href="{{route("register")}}">Sign up</a></p>
+                                </div>
                             </div>
                         </div>
                     </div>
