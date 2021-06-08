@@ -36,7 +36,7 @@ Route::group(["middleware" => ["auth", "Level:admin"]], function (){
     Route::post('kriteria-benefit/editbenefit/{id}', 'Admin\BenefitController@editbenefit')->name('edit-benefit');
     Route::get("kriteria-benefit/deletebenefit/{id}", "Admin\BenefitController@deletebenefit")->name("deletebenefit");
 
-    Route::get('tabel-normalisasi', 'Admin\SAwController@normalisasi' )->name('tabel-normalisasi');
+    Route::get('tabel-normalisasi', 'Admin\SAwController@view_normalisasi' )->name('tabel-normalisasi');
 
 });
 

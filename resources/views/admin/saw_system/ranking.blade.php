@@ -8,7 +8,7 @@
         <div class="container-fluid">
             <div class="form-head mb-4 d-flex flex-wrap align-items-center">
                 <div class="me-auto">
-                    <h2 class="font-w600 mb-0">Tabel Normalisasi</h2>
+                    <h2 class="font-w600 mb-0">Tabel Ranking</h2>
                 </div>
             </div>
             <div class="row">

@@ -8,7 +8,8 @@ use Illuminate\Support\Facades\DB;
 
 class SAwController extends Controller
 {
-    public function normalisasi(Request $request){
+
+    public function view_normalisasi(Request $request){
         $session = $request->session()->get("username");
 
         if ($session == null){
@@ -16,6 +17,12 @@ class SAwController extends Controller
         }
         $akun = DB::table('users')->where('username', $session)->first();
 
+        $datacalon = $this->normalisasi();
+
+        return view("admin.saw_system.normalisasi", compact("datacalon", "akun"));
+    }
+
+    public function normalisasi(){
         $datakriteria =[];
         $datamahasiswa=[];
 
@@ -89,18 +96,14 @@ class SAwController extends Controller
             }elseif ($sifat_Gaji == "cost"){
                 $item->gaji = min($sort_Gaji)/$item->gaji;
             }
-
         }
 
-
-
-        dd($datacalon);
+//        dd($datacalon);
 //        dd($datakriteria);
 //        dd($databenefit);
 //        dd($datamahasiswa);
 //        dd($sort_Dokumen);
 
-
-//        return view("admin.saw_system.normalisasi", compact("databenefit", "akun"));
+        return $datacalon;
     }
 }
