@@ -22,7 +22,7 @@ class CalonPenerimaController extends Controller
         $dataperiode = DB::table("periode_penerimaan")->where("status", 0)->get();
         $datacalon = DB::table("calon_penerima")
             ->join("periode_penerimaan", "periode_penerimaan.id", "=", "calon_penerima.id_periode")
-            ->where("periode_penerimaan.status", 0)
+            ->where("periode_penerimaan.status", "=", 0)
             ->select("periode_penerimaan.name","calon_penerima.*")->latest()->paginate(10);
 
 

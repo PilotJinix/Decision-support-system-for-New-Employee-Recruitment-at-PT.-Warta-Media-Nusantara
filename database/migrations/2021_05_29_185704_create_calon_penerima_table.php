@@ -17,14 +17,14 @@ class CreateCalonPenerimaTable extends Migration
             $table->bigIncrements("id");
             $table->bigInteger("id_periode")->unsigned();
             $table->foreign("id_periode")->references("id")->on("periode_penerimaan")->onDelete("cascade")->onUpdate("cascade");
-            $table->string("nama");
-            $table->string("nim");
-            $table->string("dokumen");
+            $table->bigInteger("id_user")->unsigned();
+            $table->foreign("id_user")->references("id")->on("users")->onDelete("cascade")->onUpdate("cascade");
+            $table->string("dokumen")->nullable();
             $table->string("prestasi");
-            $table->string("essay");
+            $table->string("essay")->nullable();
             $table->string("gaji");
             $table->string("data");
-            $table->enum("status", ["Lolos", "Tidak Lolos", "Sedang diproses"])->default("Sedang diproses");
+            $table->enum("status", ["Lolos", "Tidak Lolos", "Sedang diproses", "Verivikasi"])->default("Sedang diproses");
             $table->timestamps();
         });
     }

@@ -9,91 +9,84 @@
             <div class="form-head mb-4 d-flex flex-wrap align-items-center">
                 <div class="me-auto">
                     <h2 class="font-w600 mb-0">Dashboard</h2>
-                    <p class="text-light">Lorem ipsum  dolor sit amet </p>
+                    <p class="text-light">Welcome Dashboard</p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-xl-12">
                     <div class="row">
-                        <div class="col-xl-3 col-xxl-6 col-sm-6 ">
-                            <div class="card">
-                                <div class="card-header border-0 pb-0">
-                                    <div class="d-flex align-items-center">
-                                        <h2 class="chart-num font-w600 mb-0">215</h2>
-                                        <svg class="ms-2 primary-icon" width="19" height="12" viewBox="0 0 19 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M2.00401 11.1924C0.222201 11.1924 -0.670134 9.0381 0.589795 7.77817L7.78218 0.585786C8.56323 -0.195262 9.82956 -0.195262 10.6106 0.585786L17.803 7.77817C19.0629 9.0381 18.1706 11.1924 16.3888 11.1924H2.00401Z" fill="#0E8A74"/>
-                                        </svg>
-                                    </div>
-                                    <div>
-                                        <h5 class="text-black font-w500 mb-0">Tickets</h5>
-                                    </div>
-                                </div>
-                                <div class="card-body pt-0">
-                                    <div id="widgetChart1" class="chart-primary"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-xxl-6 col-sm-6 ">
-                            <div class="card">
-                                <div class="card-header border-0 pb-0">
-                                    <div class="d-flex align-items-center">
-                                        <h2 class="chart-num font-w600 mb-0">$536k</h2>
-                                        <svg class="ms-2" width="19" height="12" viewBox="0 0 19 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M2.00401 -4.76837e-06C0.222201 -4.76837e-06 -0.670134 2.15428 0.589795 3.41421L7.78218 10.6066C8.56323 11.3876 9.82956 11.3876 10.6106 10.6066L17.803 3.41421C19.0629 2.15428 18.1706 -4.76837e-06 16.3888 -4.76837e-06H2.00401Z" fill="#FF3131"/>
-                                        </svg>
-                                    </div>
-                                    <div>
-                                        <h5 class="text-black font-w500 mb-0">Revenue</h5>
-                                    </div>
-                                </div>
-                                <div class="card-body pt-0">
-                                    <div id="widgetChart2">
+                        <div class="col-xl-3 col-xxl-6 col-lg-6 col-sm-6">
+                            <div class="widget-stat card">
+                                <div class="card-body p-4">
+                                    <div class="media ai-icon">
+									<span class="me-3 bgl-primary text-primary">
+										<!-- <i class="ti-user"></i> -->
+										<svg id="icon-customers" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user">
+											<path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+											<circle cx="12" cy="7" r="4"></circle>
+										</svg>
+									</span>
+                                        <div class="media-body">
+                                            <p class="mb-1">College Student</p>
+                                            <h4 class="mb-0">200</h4>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-3 col-xxl-6 col-sm-6 ">
-                            <div class="card">
-                                <div class="card-header border-0 pb-0">
-                                    <div class="d-flex align-items-center">
-                                        <h2 class="chart-num font-w600 mb-0">652</h2>
-                                        <svg class="ms-2 primary-icon" width="19" height="12" viewBox="0 0 19 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M2.00401 11.1924C0.222201 11.1924 -0.670134 9.0381 0.589795 7.77817L7.78218 0.585786C8.56323 -0.195262 9.82956 -0.195262 10.6106 0.585786L17.803 7.77817C19.0629 9.0381 18.1706 11.1924 16.3888 11.1924H2.00401Z" fill="#0E8A74"/>
-                                        </svg>
+                        <div class="col-xl-3 col-xxl-6 col-lg-6 col-sm-6">
+                            <div class="widget-stat card">
+                                <div class="card-body p-4">
+                                    <div class="media ai-icon">
+									<span class="me-3 bgl-warning text-warning">
+										<svg id="icon-orders" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
+											<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+											<polyline points="14 2 14 8 20 8"></polyline>
+											<line x1="16" y1="13" x2="8" y2="13"></line>
+											<line x1="16" y1="17" x2="8" y2="17"></line>
+											<polyline points="10 9 9 9 8 9"></polyline>
+										</svg>
+									</span>
+                                        <div class="media-body">
+                                            <p class="mb-1">Scholarship Applicants</p>
+                                            <h4 class="mb-0">102</h4>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <h5 class="text-black font-w500 mb-0">Sales</h5>
-                                    </div>
-                                </div>
-                                <div class="card-body pt-0">
-                                    <canvas id="widgetChart3" height="60"></canvas>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-3 col-xxl-6 col-sm-6 ">
-                            <div class="card">
-                                <div class="card-body pt-sm-4 pt-3 d-flex align-items-center justify-content-between">
-                                    <div class="me-3">
-                                        <div class="d-flex align-items-center">
-                                            <h2 class="chart-num font-w600 mb-0">45242</h2>
-                                        </div>
-                                        <div>
-                                            <h5 class="text-black font-w500 mb-3 mt-2">Event Held</h5>
-                                        </div>
-                                        <div>
-                                            <p class="text-primary fs-14 mb-0">
-                                                <svg class="me-2 primary-icon" width="19" height="12" viewBox="0 0 19 12" fill="none" xmlns=	"http://www.w3.org/2000/svg">
-                                                    <path d="M2.00401 11.1924C0.222201 11.1924 -0.670134 9.0381 0.589795 7.77817L7.78218 0.585786C8.56323 -0.195262 9.82956 -0.195262 10.6106 0.585786L17.803 7.77817C19.0629 9.0381 18.1706 11.1924 16.3888 11.1924H2.00401Z" fill="#0E8A74"/>
-                                                </svg>
-                                                2.4%
-                                                <span class="op-6 text-light">than Last Week</span>
-                                            </p>
+                        <div class="col-xl-3 col-xxl-6 col-lg-6 col-sm-6">
+                            <div class="widget-stat card">
+                                <div class="card-body  p-4">
+                                    <div class="media ai-icon">
+									<span class="me-3 bgl-danger text-danger">
+										<svg id="icon-revenue" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calender">
+											<line x1="12" y1="1" x2="12" y2="23"></line>
+											<path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+										</svg>
+									</span>
+                                        <div class="media-body">
+                                            <p class="mb-1">Application Approved</p>
+                                            <h4 class="mb-0">3</h4>
                                         </div>
                                     </div>
-                                    <div>
-                                        <div class="d-inline-block position-relative donut-chart-sale">
-                                            <span class="donut1" data-peity='{ "fill": ["rgb(14, 138, 116,1)", "rgba(240, 240, 240)"],   "innerRadius": 35, "radius": 10}'>5/8</span>
-                                            <small class="text-black">66%</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-xxl-6 col-lg-6 col-sm-6">
+                            <div class="widget-stat card">
+                                <div class="card-body p-4">
+                                    <div class="media ai-icon">
+									<span class="me-3 bgl-success text-success">
+										<svg id="icon-database-widget" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-database">
+											<ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+											<path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+											<path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+										</svg>
+									</span>
+                                        <div class="media-body">
+                                            <p class="mb-1">Scholarship Period</p>
+                                            <h4 class="mb-0">4</h4>
                                         </div>
                                     </div>
                                 </div>

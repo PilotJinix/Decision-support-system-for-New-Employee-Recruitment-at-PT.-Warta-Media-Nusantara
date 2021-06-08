@@ -40,4 +40,7 @@ Route::group(["middleware" => ["auth", "Level:admin"]], function (){
 
 Route::group(["middleware" => ["auth", "Level:user"]], function (){
     Route::get('dashboard-mahasiswa', 'Mahasiswa\DashboardController@index' )->name('dashboard-mahasiswa');
+
+    Route::get('ajuan-beasiswa', 'Mahasiswa\AjuanController@index' )->name('ajuan-beasiswaa');
+    Route::post('ajuan-beasiswa/create-ajuan-beasiswa', 'Mahasiswa\AjuanController@calonPenerima')->name('create-ajuan-beasiswa');
 });

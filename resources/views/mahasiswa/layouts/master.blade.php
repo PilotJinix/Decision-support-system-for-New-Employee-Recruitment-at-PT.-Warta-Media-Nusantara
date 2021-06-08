@@ -36,7 +36,7 @@
        Nav header start
    ***********************************-->
     <div class="nav-header">
-        <a href="{{route("dashboard")}}" class="brand-logo">
+        <a href="{{route("dashboard-mahasiswa")}}" class="brand-logo">
             <!-- <img class="logo-abbr" src="./images/logo.png" alt="">
             <div class="brand-title">Ventic</div> -->
             <svg class="logo-abbr"  width="54" height="54" viewBox="0 0 54 54" fill="none">
@@ -69,7 +69,7 @@
                             <a class="nav-link" href="javascript:void(0);" role="button" data-bs-toggle="dropdown">
                                 <div class="header-info me-3">
                                     <span class="fs-16 font-w600 ">{{$akun-> username}}</span>
-                                    <small class="text-end fs-14 font-w400">Super Admin</small>
+                                    <small class="text-end fs-14 font-w400">Mahasiswa</small>
                                 </div>
                                 <img src="{{asset("assets/images/profile/admin.png")}}" width="20" alt=""/>
                             </a>
@@ -114,29 +114,11 @@
                     </ul>
 
                 </li>
-                <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                <li><a href="{{route("ajuan-beasiswaa")}}" class="ai-icon" aria-expanded="false">
                         <i class="flaticon-013-checkmark"></i>
-                        <span class="nav-text">Kriteria</span>
+                        <span class="nav-text">Ajuan Beasiswa</span>
                     </a>
-                    <ul aria-expanded="false">
-                        <li><a href="{{route("benefit")}}">Data Benefit</a></li>
-                        <li><a href="#">Data Bobot</a></li>
-                        <li><a href="#">Tabel Ranking</a></li>
-                        <li><a href="#">Tabel Peringkat</a></li>
-                    </ul>
                 </li>
-{{--                <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">--}}
-{{--                        <i class="flaticon-022-copy"></i>--}}
-{{--                        <span class="nav-text">Sistem SAW</span>--}}
-{{--                    </a>--}}
-{{--                    <ul aria-expanded="false">--}}
-{{--                        <li><a href="#">Data Benefit</a></li>--}}
-{{--                        <li><a href="#">Tabel Normalisasi</a></li>--}}
-{{--                        <li><a href="#">Tabel Ranking</a></li>--}}
-{{--                        <li><a href="#">Tabel Peringkat</a></li>--}}
-{{--                    </ul>--}}
-{{--                </li>--}}
-
             </ul>
             <div class="plus-box">
                 <p><strong>Sistem Penunjang Pengambilan Keputusan</strong></p>

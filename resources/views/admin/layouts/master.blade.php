@@ -120,9 +120,6 @@
                     </a>
                     <ul aria-expanded="false">
                         <li><a href="{{route("benefit")}}">Data Benefit</a></li>
-                        <li><a href="#">Data Bobot</a></li>
-                        <li><a href="#">Tabel Ranking</a></li>
-                        <li><a href="#">Tabel Peringkat</a></li>
                     </ul>
                 </li>
                 <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
@@ -130,7 +127,6 @@
                         <span class="nav-text">Sistem SAW</span>
                     </a>
                     <ul aria-expanded="false">
-                        <li><a href="#">Data Benefit</a></li>
                         <li><a href="#">Tabel Normalisasi</a></li>
                         <li><a href="#">Tabel Ranking</a></li>
                         <li><a href="#">Tabel Peringkat</a></li>

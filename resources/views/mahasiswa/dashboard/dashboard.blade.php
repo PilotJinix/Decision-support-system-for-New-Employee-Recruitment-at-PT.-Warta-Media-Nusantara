@@ -9,91 +9,62 @@
             <div class="form-head mb-4 d-flex flex-wrap align-items-center">
                 <div class="me-auto">
                     <h2 class="font-w600 mb-0">Dashboard</h2>
-                    <p class="text-light">Lorem ipsum  dolor sit amet </p>
+                    <p class="text-light">Beasiswa</p>
+                </div>
+            </div>
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title">Pendaftaran Beasiswa</h5>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Pendaftaran Beasiwa dapat dilakukan ketika periode beasiswa telah dibuka oleh pernyedia beasiswa <br> mahasiswa dapat melihat periode beasiswa tersebut pada tabel periode penerimaan </p>
+                    </div>
+                    <div class="card-footer d-sm-flex justify-content-end align-items-center">
+                        <a href="javascript:void(0);" class="btn btn-primary">Ajukan Beasiswa</a>
+                    </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-xl-12">
-                    <div class="row">
-                        <div class="col-xl-3 col-xxl-6 col-sm-6 ">
-                            <div class="card">
-                                <div class="card-header border-0 pb-0">
-                                    <div class="d-flex align-items-center">
-                                        <h2 class="chart-num font-w600 mb-0">215</h2>
-                                        <svg class="ms-2 primary-icon" width="19" height="12" viewBox="0 0 19 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M2.00401 11.1924C0.222201 11.1924 -0.670134 9.0381 0.589795 7.77817L7.78218 0.585786C8.56323 -0.195262 9.82956 -0.195262 10.6106 0.585786L17.803 7.77817C19.0629 9.0381 18.1706 11.1924 16.3888 11.1924H2.00401Z" fill="#0E8A74"/>
-                                        </svg>
-                                    </div>
-                                    <div>
-                                        <h5 class="text-black font-w500 mb-0">Tickets</h5>
-                                    </div>
-                                </div>
-                                <div class="card-body pt-0">
-                                    <div id="widgetChart1" class="chart-primary"></div>
-                                </div>
-                            </div>
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">Ketentuan Essay</h4>
                         </div>
-                        <div class="col-xl-3 col-xxl-6 col-sm-6 ">
-                            <div class="card">
-                                <div class="card-header border-0 pb-0">
-                                    <div class="d-flex align-items-center">
-                                        <h2 class="chart-num font-w600 mb-0">$536k</h2>
-                                        <svg class="ms-2" width="19" height="12" viewBox="0 0 19 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M2.00401 -4.76837e-06C0.222201 -4.76837e-06 -0.670134 2.15428 0.589795 3.41421L7.78218 10.6066C8.56323 11.3876 9.82956 11.3876 10.6106 10.6066L17.803 3.41421C19.0629 2.15428 18.1706 -4.76837e-06 16.3888 -4.76837e-06H2.00401Z" fill="#FF3131"/>
-                                        </svg>
-                                    </div>
-                                    <div>
-                                        <h5 class="text-black font-w500 mb-0">Revenue</h5>
-                                    </div>
-                                </div>
-                                <div class="card-body pt-0">
-                                    <div id="widgetChart2">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-xxl-6 col-sm-6 ">
-                            <div class="card">
-                                <div class="card-header border-0 pb-0">
-                                    <div class="d-flex align-items-center">
-                                        <h2 class="chart-num font-w600 mb-0">652</h2>
-                                        <svg class="ms-2 primary-icon" width="19" height="12" viewBox="0 0 19 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M2.00401 11.1924C0.222201 11.1924 -0.670134 9.0381 0.589795 7.77817L7.78218 0.585786C8.56323 -0.195262 9.82956 -0.195262 10.6106 0.585786L17.803 7.77817C19.0629 9.0381 18.1706 11.1924 16.3888 11.1924H2.00401Z" fill="#0E8A74"/>
-                                        </svg>
-                                    </div>
-                                    <div>
-                                        <h5 class="text-black font-w500 mb-0">Sales</h5>
-                                    </div>
-                                </div>
-                                <div class="card-body pt-0">
-                                    <canvas id="widgetChart3" height="60"></canvas>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-xxl-6 col-sm-6 ">
-                            <div class="card">
-                                <div class="card-body pt-sm-4 pt-3 d-flex align-items-center justify-content-between">
-                                    <div class="me-3">
-                                        <div class="d-flex align-items-center">
-                                            <h2 class="chart-num font-w600 mb-0">45242</h2>
-                                        </div>
-                                        <div>
-                                            <h5 class="text-black font-w500 mb-3 mt-2">Event Held</h5>
-                                        </div>
-                                        <div>
-                                            <p class="text-primary fs-14 mb-0">
-                                                <svg class="me-2 primary-icon" width="19" height="12" viewBox="0 0 19 12" fill="none" xmlns=	"http://www.w3.org/2000/svg">
-                                                    <path d="M2.00401 11.1924C0.222201 11.1924 -0.670134 9.0381 0.589795 7.77817L7.78218 0.585786C8.56323 -0.195262 9.82956 -0.195262 10.6106 0.585786L17.803 7.77817C19.0629 9.0381 18.1706 11.1924 16.3888 11.1924H2.00401Z" fill="#0E8A74"/>
-                                                </svg>
-                                                2.4%
-                                                <span class="op-6 text-light">than Last Week</span>
-                                            </p>
+                        <div class="card-body">
+                            <div class="basic-list-group">
+                                <div class="row">
+                                    <div class="col-lg-6 col-xl-2">
+                                        <div class="list-group mb-4 " id="list-tab" role="tablist"><a class="list-group-item list-group-item-action active" id="list-home-list" data-bs-toggle="list" href="#list-home" role="tab">Motivasi</a> <a class="list-group-item list-group-item-action" id="list-profile-list" data-bs-toggle="list" href="#list-profile" role="tab">Kesiapan Diri</a> <a class="list-group-item list-group-item-action" id="list-messages-list" data-bs-toggle="list" href="#list-messages" role="tab">Gambaran Diri</a>
+                                            <a class="list-group-item list-group-item-action" id="list-settings-list" data-bs-toggle="list" href="#list-settings" role="tab">Issue</a>
                                         </div>
                                     </div>
-                                    <div>
-                                        <div class="d-inline-block position-relative donut-chart-sale">
-                                            <span class="donut1" data-peity='{ "fill": ["rgb(14, 138, 116,1)", "rgba(240, 240, 240)"],   "innerRadius": 35, "radius": 10}'>5/8</span>
-                                            <small class="text-black">66%</small>
+                                    <div class="col-lg-6 col-xl-10">
+                                        <div class="tab-content" id="nav-tabContent">
+                                            <div class="tab-pane fade show active" id="list-home">
+                                                <h4 class="mb-4">Jelaskan apa motivasi terbesar Anda ingin mengikuti Beasiswa BI ?</h4>
+                                                <p>Velit aute mollit ipsum ad dolor consectetur nulla officia culpa adipisicing exercitation fugiat tempor. Voluptate deserunt sit sunt nisi aliqua fugiat proident ea ut. Mollit voluptate reprehenderit
+                                                    occaecat nisi ad non minim tempor sunt voluptate consectetur exercitation id ut nulla. Ea et fugiat aliquip nostrud sunt incididunt consectetur culpa aliquip eiusmod dolor. Anim ad Lorem aliqua in
+                                                    cupidatat nisi enim eu nostrud do aliquip veniam minim.</p>
+                                            </div>
+                                            <div class="tab-pane fade" id="list-profile" role="tabpanel">
+                                                <h4 class="mb-4">Beritahu saya kesiapan diri Anda jika diterjukan ke Daerah terpencil untuk mengabdi ke masyarakat, sertakan alasan ?</h4>
+                                                <p>Cupidatat quis ad sint excepteur laborum in esse qui. Et excepteur consectetur ex nisi eu do cillum ad laborum. Mollit et eu officia dolore sunt Lorem culpa qui commodo velit ex amet id ex. Officia anim
+                                                    incididunt laboris deserunt anim aute dolor incididunt veniam aute dolore do exercitation. Dolor nisi culpa ex ad irure in elit eu dolore. Ad laboris ipsum reprehenderit irure non commodo enim culpa
+                                                    commodo veniam incididunt veniam ad.</p>
+                                            </div>
+                                            <div class="tab-pane fade" id="list-messages">
+                                                <h4 class="mb-4">Ceritakan gambaran diri Anda, dan hal apa yang akan Anda lakukan jika diterima sebagai penerima Beasiswa BI ?</h4>
+                                                <p>Ut ut do pariatur aliquip aliqua aliquip exercitation do nostrud commodo reprehenderit aute ipsum voluptate. Irure Lorem et laboris nostrud amet cupidatat cupidatat anim do ut velit mollit consequat
+                                                    enim tempor. Consectetur est minim nostrud nostrud consectetur irure labore voluptate irure. Ipsum id Lorem sit sint voluptate est pariatur eu ad cupidatat et deserunt culpa sit eiusmod deserunt.
+                                                    Consectetur et fugiat anim do eiusmod aliquip nulla laborum elit adipisicing pariatur cillum.</p>
+                                            </div>
+                                            <div class="tab-pane fade" id="list-settings">
+                                                <h4 class="mb-4">Ceritakan issue kebanksentralan yang sedang hangat saat ini, dan berikan tanggapan Anda tentang issue tersebut ?</h4>
+                                                <p>Irure enim occaecat labore sit qui aliquip reprehenderit amet velit. Deserunt ullamco ex elit nostrud ut dolore nisi officia magna sit occaecat laboris sunt dolor. Nisi eu minim cillum occaecat aute
+                                                    est cupidatat aliqua labore aute occaecat ea aliquip sunt amet. Aute mollit dolor ut exercitation irure commodo non amet consectetur quis amet culpa. Quis ullamco nisi amet qui aute irure eu. Magna
+                                                    labore dolor quis ex labore id nostrud deserunt dolor eiusmod eu pariatur culpa mollit in irure.</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -101,6 +72,7 @@
                         </div>
                     </div>
                 </div>
+
             </div>
             <br>
             <div class="form-head mb-4 d-flex flex-wrap align-items-center">
@@ -111,41 +83,6 @@
             <div class="row">
                 <div class="col-12">
                     <div class="card">
-                        <div class="card-header justify-content-end">
-                            <a class="btn btn-rounded btn-primary" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#addNewCustomer"><span
-                                    class="btn-icon-start text-primary"><i class="fa fa-plus color-info"></i>
-                                    </span>Tambah Periode</a>
-                            <!-- Add Order -->
-                            <div class="modal fade" id="addNewCustomer">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title">Tambah Penerimaan</h5>
-                                            <a href="javascript:void(0);" class="btn-close" data-bs-dismiss="modal"></a>
-                                        </div>
-                                        <div class="modal-body">
-                                            <form method="POST" action="{{route("create-periode")}}">
-                                                @csrf
-                                                <div class="mb-3">
-                                                    <label class="text-black font-w500">Name</label>
-                                                    <input type="text" class="form-control" name="name">
-                                                </div>
-                                                <div class="mb-3">
-                                                    <label class="text-black font-w500">Kategori</label>
-                                                    <select type="text" class="form-control form-select" name="kategori">
-                                                        <option selected>Pilih Status</option>
-                                                        <option value="Beasiswa">Beasiswa</option>
-                                                    </select>
-                                                </div>
-                                                <div class="form-group">
-                                                    <button type="submit" class="btn btn-primary">Create</button>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table id="example3" class="display" style="min-width: 845px">
@@ -156,7 +93,6 @@
                                         <th>Kategori</th>
                                         <th>Periode</th>
                                         <th>Status</th>
-                                        <th>Action</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -175,69 +111,6 @@
                                                 @else
                                                     <span class="badge light badge-warning">Ditutup</span>
                                                 @endif
-                                            </td>
-                                            <td>
-                                                <div class="d-flex">
-                                                    <a href="javascript:void(0)" class="btn btn-primary shadow btn-xs sharp me-1" data-bs-toggle="modal" data-bs-target="{{__("#editkegiatan".$item->id)}}"><i class="fa fa-pencil"></i></a>
-                                                    <div class="modal fade" id="{{__('editkegiatan'.$item->id)}}">
-                                                        <div class="modal-dialog" role="document">
-                                                            <div class="modal-content">
-                                                                <div class="modal-header">
-                                                                    <h5 class="modal-title">Edit Penerimaan</h5>
-                                                                    <a href="javascript:void(0);" class="btn-close" data-bs-dismiss="modal"></a>
-                                                                </div>
-                                                                <div class="modal-body">
-                                                                    <form method="POST" action="{{route("edit-penerimaan", $item->id)}}">
-                                                                        @csrf
-                                                                        <div class="mb-3">
-                                                                            <label class="text-black font-w500">Name</label>
-                                                                            <input type="text" class="form-control" name="editname" value="{{__($item->name)}}">
-                                                                        </div>
-                                                                        <div class="mb-3">
-                                                                            <label class="text-black font-w500">Kategori</label>
-                                                                            <select type="text" class="form-control form-select" name="editkategori">
-                                                                                <option value="Beasiswa" {{$item->kategori == "Beasiswa" ? "selected" : ""}}>Beasiswa</option>
-                                                                            </select>
-                                                                        </div>
-                                                                        <div class="mb-3">
-                                                                            <label class="text-black font-w500">Status Penerimaan</label>
-                                                                            <select type="text" class="form-control form-select" name="editstatus">
-                                                                                <option value="0" {{$item->status == "0" ? "selected" : ""}}>Dibuka</option>
-                                                                                <option value="1" {{$item->status == "1" ? "selected" : ""}}>Ditutup</option>
-                                                                            </select>
-                                                                        </div>
-                                                                        <div class="form-group">
-                                                                            <button type="submit" class="btn btn-primary btn-block">Save</button>
-                                                                        </div>
-                                                                    </form>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <a href="javascript:void(0)" class="btn btn-danger shadow btn-xs sharp me-1" data-bs-toggle="modal" data-bs-target="{{__("#modal".$item->id)}}"><i class="fa fa-trash"></i></a>
-                                                    <div class="modal fade" id={{__('modal'.$item->id)}} tabindex="-1" role="dialog"
-                                                         aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                                                        <div class="modal-dialog modal-dialog-centered" role="document">
-                                                            <div class="modal-content">
-                                                                <div class="modal-header">
-                                                                    <h5 class="modal-title" id="exampleModalCenterTitle">Hapus Akun</h5>
-                                                                    <a href="javascript:void(0);" class="btn-close" data-bs-dismiss="modal"></a>
-                                                                </div>
-                                                                <div class="modal-body text-center">
-                                                                    <i class="fa fa-warning"
-                                                                       style="font-size: 100px; color: orange"></i>
-                                                                    <p>{{__("Semua data periode ".$item->name." akan dihapus!")}}
-                                                                    </p>
-                                                                </div>
-                                                                <div class="modal-footer">
-                                                                    <a href="{{route("deleteperiode", $item->id)}}">
-                                                                        <button type="button" class="btn btn-danger">Hapus Data</button>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
                                             </td>
                                         </tr>
                                     @endforeach
