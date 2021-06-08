@@ -57,10 +57,6 @@ class SAwController extends Controller
         $databenefit = DB::table("kriteria_benefit")->where("id_periode", "=", $datamahasiswa[0]->id_periode)->get();
 
         foreach ($databenefit as $item){
-            $datakriteria[] = $item;
-        }
-
-        foreach ($datakriteria as $item){
             if ($item->nama_kriteria == "Dokumen"){
                 $sifat_Dokumen = $item->sifat_kriteria;
             }elseif ($item->nama_kriteria == "Prestasi dan Pengalaman"){
