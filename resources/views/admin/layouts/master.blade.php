@@ -127,7 +127,7 @@
                         <span class="nav-text">Sistem SAW</span>
                     </a>
                     <ul aria-expanded="false">
-                        <li><a href="#">Tabel Normalisasi</a></li>
+                        <li><a href="{{route("tabel-normalisasi")}}">Tabel Normalisasi</a></li>
                         <li><a href="#">Tabel Ranking</a></li>
                         <li><a href="#">Tabel Peringkat</a></li>
                     </ul>

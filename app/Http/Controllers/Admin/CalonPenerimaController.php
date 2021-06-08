@@ -63,6 +63,7 @@ class CalonPenerimaController extends Controller
 
         $request->validate([
             "editdokumen" => "required|string",
+            "editprestasi" => "required|string",
             "editipk" => "required|string",
             "editessay" => "required|string",
             "editgaji" => "required|string",
@@ -71,7 +72,8 @@ class CalonPenerimaController extends Controller
 
         DB::table("calon_penerima")->where("id", $id)->update([
             "dokumen" => $request->editdokumen,
-            "prestasi" => $request->editipk,
+            "prestasi" => $request->editprestasi,
+            "ipk" => $request->editipk,
             "essay" => $request->editessay,
             "gaji" => $request->editgaji,
             "status" => $request->editstatus,

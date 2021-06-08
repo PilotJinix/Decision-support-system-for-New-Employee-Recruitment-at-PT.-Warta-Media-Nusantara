@@ -20,7 +20,8 @@ class CreateCalonPenerimaTable extends Migration
             $table->bigInteger("id_user")->unsigned();
             $table->foreign("id_user")->references("id")->on("users")->onDelete("cascade")->onUpdate("cascade");
             $table->string("dokumen")->nullable();
-            $table->string("prestasi");
+            $table->string("prestasi")->nullable();
+            $table->string("ipk");
             $table->string("essay")->nullable();
             $table->string("gaji");
             $table->string("data");

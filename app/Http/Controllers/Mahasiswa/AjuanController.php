@@ -51,7 +51,7 @@ class AjuanController extends Controller
         DB::table("calon_penerima")->insert([
             "id_periode"=> $request->id_periode,
             "id_user" => $data,
-            "prestasi" => $request->ipk,
+            "ipk" => $request->ipk,
             "gaji" => $request->gaji,
             "data" => $name
         ]);

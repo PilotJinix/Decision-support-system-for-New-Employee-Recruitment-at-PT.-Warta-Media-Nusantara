@@ -36,6 +36,8 @@ Route::group(["middleware" => ["auth", "Level:admin"]], function (){
     Route::post('kriteria-benefit/editbenefit/{id}', 'Admin\BenefitController@editbenefit')->name('edit-benefit');
     Route::get("kriteria-benefit/deletebenefit/{id}", "Admin\BenefitController@deletebenefit")->name("deletebenefit");
 
+    Route::get('tabel-normalisasi', 'Admin\SAwController@normalisasi' )->name('tabel-normalisasi');
+
 });
 
 Route::group(["middleware" => ["auth", "Level:user"]], function (){
@@ -43,4 +45,5 @@ Route::group(["middleware" => ["auth", "Level:user"]], function (){
 
     Route::get('ajuan-beasiswa', 'Mahasiswa\AjuanController@index' )->name('ajuan-beasiswaa');
     Route::post('ajuan-beasiswa/create-ajuan-beasiswa', 'Mahasiswa\AjuanController@calonPenerima')->name('create-ajuan-beasiswa');
+
 });

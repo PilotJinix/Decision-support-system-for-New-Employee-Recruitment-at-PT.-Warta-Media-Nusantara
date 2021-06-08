@@ -8,7 +8,7 @@
         <div class="container-fluid">
             <div class="form-head mb-4 d-flex flex-wrap align-items-center">
                 <div class="me-auto">
-                    <h2 class="font-w600 mb-0">Calon Penerima</h2>
+                    <h2 class="font-w600 mb-0">Ajuan Beasiswa</h2>
                 </div>
             </div>
             <div class="row">
@@ -17,13 +17,13 @@
                         <div class="card-header justify-content-end">
                             <a class="btn btn-rounded btn-primary" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#addNewCustomer"><span
                                     class="btn-icon-start text-primary"><i class="fa fa-plus color-info"></i>
-                                    </span>Tambah Periode</a>
+                                    </span>Ajuan Beasiswa</a>
                             <!-- Add Order -->
                             <div class="modal fade" id="addNewCustomer">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title">Tambah Penerimaan</h5>
+                                            <h5 class="modal-title">Tambah Ajuan Beasiswa</h5>
                                             <a href="javascript:void(0);" class="btn-close" data-bs-dismiss="modal"></a>
                                         </div>
                                         <div class="modal-body">
@@ -39,25 +39,23 @@
                                                     </select>
                                                 </div>
                                                 <div class="mb-3">
-                                                    <label class="text-black font-w500">Prestasi IPK</label>
+                                                    <label class="text-black font-w500">IPK</label>
                                                     <select type="text" class="form-control form-select" name="ipk">
-                                                        <option selected>Pilih Status</option>
-                                                        <option value="90">IPK > 3.51</option>
-                                                        <option value="75">3.25 > IPK < 3.50</option>
-                                                        <option value="50">3.00 > IPK < 3.25</option>
-                                                        <option value="30">2.75 > IPK < 3.00</option>
-                                                        <option value="0">IPK < 2.75</option>
+                                                        <option value="" selected>Pilih Status</option>
+                                                        <option value="100">3.85 <= IPK <= 4.00</option>
+                                                        <option value="70">3.50 <= IPK < 3.85</option>
+                                                        <option value="40">3.25 <= IPK < 3.50</option>
+                                                        <option value="10">3,00 <= x < 3,25</option>
                                                     </select>
                                                 </div>
                                                 <div class="mb-3">
                                                     <label class="text-black font-w500">Gaji Orang Tua</label>
                                                     <select type="text" class="form-control form-select" name="gaji">
-                                                        <option selected>Pilih Status</option>
-                                                        <option value="90">Gaji >= 3.500.000</option>
-                                                        <option value="75">2.500.000 >= Gaji <= 3.500.000</option>
-                                                        <option value="50">1.500.000 >= Gaji <= 2.500.000</option>
-                                                        <option value="30">500.000 >= Gaji <= 1.500.000</option>
-                                                        <option value="0">Gaji < 500.000</option>
+                                                        <option value="" selected>Pilih Status</option>
+                                                        <option value="10">Gaji <= Rp 1.500.000</option>
+                                                        <option value="40">Rp 1.500.000 < Gaji <= Rp. 4.000.000 </option>
+                                                        <option value="70">Rp. 4.000.000 < Gaji <= Rp. 7.000.000</option>
+                                                        <option value="100">Gaji > Rp .7.000.000 </option>
                                                     </select>
                                                 </div>
                                                 <div class="mb-3">
@@ -83,7 +81,7 @@
                                     <tr>
                                         <th>No</th>
                                         <th>Periode</th>
-                                        <th>Prestasi Pengalaman</th>
+                                        <th>IPK</th>
                                         <th>Gaji Orang Tua</th>
                                         <th>Status</th>
                                         <th>Action</th>
@@ -97,7 +95,7 @@
                                         <tr>
                                             <td>{{$i++}}</td>
                                             <td>{{__($item->name)}}</td>
-                                            <td>{{__($item->prestasi)}}</td>
+                                            <td>{{__($item->ipk)}}</td>
                                             <td>{{__($item->gaji)}}</td>
                                             <td>
                                                 @if($item->status == "Lolos")
@@ -115,30 +113,29 @@
                                                         <div class="modal-dialog" role="document">
                                                             <div class="modal-content">
                                                                 <div class="modal-header">
-                                                                    <h5 class="modal-title">Edit Penerimaan</h5>
+                                                                    <h5 class="modal-title">Edit Ajuan Beasiswa</h5>
                                                                     <a href="javascript:void(0);" class="btn-close" data-bs-dismiss="modal"></a>
                                                                 </div>
                                                                 <div class="modal-body">
                                                                     <form method="POST" action="{{route("edit-calonPenerima", $item->id)}}">
                                                                         @csrf
                                                                         <div class="mb-3">
-                                                                            <label class="text-black font-w500">Prestasi IPK</label>
+                                                                            <label class="text-black font-w500">IPK</label>
                                                                             <select type="text" class="form-control form-select" name="editipk">
-                                                                                <option value="90" {{$item->prestasi == "90" ? "selected" : ""}}>IPK > 3.51</option>
-                                                                                <option value="75" {{$item->prestasi == "75" ? "selected" : ""}}>3.25 > IPK < 3.50</option>
-                                                                                <option value="50" {{$item->prestasi == "50" ? "selected" : ""}} >3.00 > IPK < 3.25</option>
-                                                                                <option value="30" {{$item->prestasi == "30" ? "selected" : ""}} >2.75 > IPK < 3.00</option>
-                                                                                <option value="0" {{$item->prestasi == "0" ? "selected" : ""}} >IPK < 2.75</option>
+                                                                                <option value="100" {{$item->ipk == "100" ? "selected" : ""}}>3.85 <= IPK <= 4.00</option>
+                                                                                <option value="70" {{$item->ipk == "70" ? "selected" : ""}}>3.50 <= IPK < 3.85</option>
+                                                                                <option value="40" {{$item->ipk == "40" ? "selected" : ""}} >3.25 <= IPK < 3.50</option>
+                                                                                <option value="10" {{$item->ipk == "10" ? "selected" : ""}} >3.00 <= IPK < 3.25</option>
                                                                             </select>
                                                                         </div>
                                                                         <div class="mb-3">
                                                                             <label class="text-black font-w500">Gaji Orang Tua</label>
                                                                             <select type="text" class="form-control form-select" name="editgaji">
-                                                                                <option value="90" {{$item->gaji == "90" ? "selected" : ""}}>Gaji >= 3.500.000</option>
-                                                                                <option value="75" {{$item->gaji == "75" ? "selected" : ""}}>2.500.000 >= Gaji <= 3.500.000</option>
-                                                                                <option value="50" {{$item->gaji == "50" ? "selected" : ""}}>1.500.000 >= Gaji <= 2.500.000</option>
-                                                                                <option value="30" {{$item->gaji == "30" ? "selected" : ""}}>500.000 >= Gaji <= 1.500.000</option>
-                                                                                <option value="0" {{$item->gaji == "0" ? "selected" : ""}}>Gaji < 500.000</option>
+                                                                                <option value="10" {{$item->gaji == "10" ? "selected" : ""}}>Gaji <= Rp 1.500.000</option>
+                                                                                <option value="40" {{$item->gaji == "40" ? "selected" : ""}}>Rp 1.500.000 < Gaji <= Rp. 4.000.000 </option>
+                                                                                <option value="70" {{$item->gaji == "70" ? "selected" : ""}}>Rp. 4.000.000 < Gaji <= Rp. 7.000.000</option>
+                                                                                <option value="100" {{$item->gaji == "100" ? "selected" : ""}}>Gaji > Rp .7.000.000 </option>
+
                                                                             </select>
                                                                         </div>
                                                                         <div class="form-group">
