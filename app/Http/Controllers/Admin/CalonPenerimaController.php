@@ -62,21 +62,17 @@ class CalonPenerimaController extends Controller
         $akun = DB::table('users')->where('username', $session)->first();
 
         $request->validate([
-            "editname" => "required|string",
-            "editnim" => "required|string",
             "editdokumen" => "required|string",
             "editipk" => "required|string",
-            "editwawancara" => "required|string",
+            "editessay" => "required|string",
             "editgaji" => "required|string",
             "editstatus" => "required|string"
         ]);
 
         DB::table("calon_penerima")->where("id", $id)->update([
-            "nama" => $request->editname,
-            "nim" => $request->editnim,
             "dokumen" => $request->editdokumen,
             "prestasi" => $request->editipk,
-            "wawancara" => $request->editwawancara,
+            "essay" => $request->editessay,
             "gaji" => $request->editgaji,
             "status" => $request->editstatus,
         ]);

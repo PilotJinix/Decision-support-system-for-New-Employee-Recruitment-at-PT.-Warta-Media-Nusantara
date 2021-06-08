@@ -18,10 +18,24 @@
                         <h5 class="card-title">Pendaftaran Beasiswa</h5>
                     </div>
                     <div class="card-body">
-                        <p class="card-text">Pendaftaran Beasiwa dapat dilakukan ketika periode beasiswa telah dibuka oleh pernyedia beasiswa <br> mahasiswa dapat melihat periode beasiswa tersebut pada tabel periode penerimaan </p>
+                        <p class="card-text">Pendaftaran Beasiwa dapat dilakukan ketika periode beasiswa telah dibuka oleh pernyedia beasiswa
+                            <br> mahasiswa dapat melihat periode beasiswa tersebut pada tabel periode penerimaan
+                            <br> <br>
+                            <strong>Ketentuan Kelengkapan Berkas</strong>
+                            <br>
+                            1. Surat aktif kuliah
+                            <br>
+                            2. Surat Keterangan Tidak Mampu
+                            <br>
+                            3. Lembar Hasil Mahasiswa / LHS
+                            <br>
+                            4. Lembar Essay
+                            <br>
+                            5. Sertifikat Organisasi atau Kejuaraan
+                        </p>
                     </div>
                     <div class="card-footer d-sm-flex justify-content-end align-items-center">
-                        <a href="javascript:void(0);" class="btn btn-primary">Ajukan Beasiswa</a>
+                        <a href="{{route("ajuan-beasiswaa")}}" class="btn btn-primary">Ajukan Beasiswa</a>
                     </div>
                 </div>
             </div>

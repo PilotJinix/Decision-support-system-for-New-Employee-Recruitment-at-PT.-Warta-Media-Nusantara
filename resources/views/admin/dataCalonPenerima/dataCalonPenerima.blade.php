@@ -102,12 +102,10 @@
                                     <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th>Nama</th>
-                                        <th>Nim</th>
                                         <th>Periode</th>
                                         <th>Dokumen</th>
                                         <th>Prestasi Pengalaman</th>
-                                        <th>Wawancara</th>
+                                        <th>Essay</th>
                                         <th>Gaji Orang Tua</th>
                                         <th>Status</th>
                                         <th>Action</th>
@@ -120,12 +118,10 @@
                                     @foreach($datacalon as $item)
                                         <tr>
                                             <td>{{$i++}}</td>
-                                            <td>{{__($item->nama)}}</td>
-                                            <td>{{__($item->nim)}}</td>
                                             <td>{{__($item->name)}}</td>
                                             <td>{{__($item->dokumen)}}</td>
                                             <td>{{__($item->prestasi)}}</td>
-                                            <td>{{__($item->wawancara)}}</td>
+                                            <td>{{__($item->essay)}}</td>
                                             <td>{{__($item->gaji)}}</td>
                                             <td>
                                                 @if($item->status == "Lolos")
@@ -150,14 +146,6 @@
                                                                     <form method="POST" action="{{route("edit-calonPenerima", $item->id)}}">
                                                                         @csrf
                                                                         <div class="mb-3">
-                                                                            <label class="text-black font-w500">Name</label>
-                                                                            <input type="text" class="form-control" name="editname" value="{{__($item->nama)}}">
-                                                                        </div>
-                                                                        <div class="mb-3">
-                                                                            <label class="text-black font-w500">Name</label>
-                                                                            <input type="text" class="form-control" name="editnim" value="{{__($item->nim)}}">
-                                                                        </div>
-                                                                        <div class="mb-3">
                                                                             <label class="text-black font-w500">Dokumen</label>
                                                                             <select type="text" class="form-control form-select" name="editdokumen">
                                                                                 <option value="90" {{$item->dokumen == "90" ? "selected" : ""}}>Lengkap</option>
@@ -175,13 +163,12 @@
                                                                             </select>
                                                                         </div>
                                                                         <div class="mb-3">
-                                                                            <label class="text-black font-w500">Wawancara</label>
-                                                                            <select type="text" class="form-control form-select" name="editwawancara">
-                                                                                <option value="90" {{$item->wawancara == "90" ? "selected" : ""}}>Sangat Baik</option>
-                                                                                <option value="75" {{$item->wawancara == "75" ? "selected" : ""}}>Baik</option>
-                                                                                <option value="50" {{$item->wawancara == "50" ? "selected" : ""}}>Cukup</option>
-                                                                                <option value="30" {{$item->wawancara == "30" ? "selected" : ""}}>Kurang</option>
-                                                                                <option value="0" {{$item->wawancara == "0" ? "selected" : ""}}>Sangat Kurang</option>
+                                                                            <label class="text-black font-w500">Essay</label>
+                                                                            <select type="text" class="form-control form-select" name="editessay">
+                                                                                <option value="100" {{$item->essay == "90" ? "selected" : ""}}>Sangat Baik</option>
+                                                                                <option value="70" {{$item->essay == "75" ? "selected" : ""}}>Baik</option>
+                                                                                <option value="40" {{$item->essay == "50" ? "selected" : ""}}>Cukup</option>
+                                                                                <option value="10" {{$item->essay == "30" ? "selected" : ""}}>Kurang</option>
                                                                             </select>
                                                                         </div>
                                                                         <div class="mb-3">
@@ -222,7 +209,7 @@
                                                                 <div class="modal-body text-center">
                                                                     <i class="fa fa-warning"
                                                                        style="font-size: 100px; color: orange"></i>
-                                                                    <p>{{__("Semua data periode ".$item->nama." akan dihapus!")}}
+                                                                    <p>{{__("Semua data akan dihapus!")}}
                                                                     </p>
                                                                 </div>
                                                                 <div class="modal-footer">
