@@ -22,8 +22,9 @@ class CalonPenerimaController extends Controller
         $dataperiode = DB::table("periode_penerimaan")->where("status", 0)->get();
         $datacalon = DB::table("calon_penerima")
             ->join("periode_penerimaan", "periode_penerimaan.id", "=", "calon_penerima.id_periode")
+            ->join("users", "users.id", "=", "calon_penerima.id_user")
             ->where("periode_penerimaan.status", "=", 0)
-            ->select("periode_penerimaan.name","calon_penerima.*")->latest()->paginate(10);
+            ->select("periode_penerimaan.name","calon_penerima.*", "users.nama_lengkap","users.nim")->latest()->paginate(10);
 
 
         return view("admin.dataCalonPenerima.dataCalonPenerima", compact("datacalon", "akun", "dataperiode"));

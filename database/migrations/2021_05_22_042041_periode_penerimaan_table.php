@@ -17,6 +17,7 @@ class PeriodePenerimaanTable extends Migration
             $table->bigIncrements("id");
             $table->string("name");
             $table->string("kategori");
+            $table->string("kuota");
             $table->string("status")->default("0");
             $table->timestamps();
         });

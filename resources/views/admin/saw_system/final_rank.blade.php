@@ -59,53 +59,8 @@
                                                                     <a href="javascript:void(0);" class="btn-close" data-bs-dismiss="modal"></a>
                                                                 </div>
                                                                 <div class="modal-body">
-                                                                    <form method="POST" action="{{route("edit-calonPenerima", $item->id)}}">
+                                                                    <form method="POST" action="{{route("edit-tabel-final-ranking", $item->id)}}">
                                                                         @csrf
-                                                                        <div class="mb-3">
-                                                                            <label class="text-black font-w500">Dokumen</label>
-                                                                            <select type="text" class="form-control form-select" name="editdokumen" disabled>
-                                                                                <option value="100" {{$item->dokumen == "100" ? "selected" : ""}}>Lengkap</option>
-                                                                                <option value="70" {{$item->dokumen == "70" ? "selected" : ""}}>Lengkap kecuali SKTM</option>
-                                                                                <option value="40" {{$item->dokumen == "40" ? "selected" : ""}}>Lengkap kecuali Surat Rekomendasi</option>
-                                                                                <option value="10" {{$item->dokumen == "10" ? "selected" : ""}}>Tidak Lengkap</option>
-                                                                            </select>
-                                                                        </div>
-                                                                        <div class="mb-3">
-                                                                            <label class="text-black font-w500">Prestasi dan Pengalaman</label>
-                                                                            <select type="text" class="form-control form-select" name="editprestasi">
-                                                                                <option value="100" {{$item->prestasi == "100" ? "selected" : ""}}>Sertifikat Kejuaraan dan Organisasi</option>
-                                                                                <option value="70" {{$item->prestasi == "70" ? "selected" : ""}}>Sertifikat Kejuaraan</option>
-                                                                                <option value="40" {{$item->prestasi == "40" ? "selected" : ""}}>Sertifikat Organisasi</option>
-                                                                                <option value="10" {{$item->prestasi == "10" ? "selected" : ""}}>Tidak ada pengalaman organisasi</option>
-                                                                            </select>
-                                                                        </div>
-                                                                        <div class="mb-3">
-                                                                            <label class="text-black font-w500">Prestasi IPK</label>
-                                                                            <select type="text" class="form-control form-select" name="editipk">
-                                                                                <option value="100" {{$item->ipk == "100" ? "selected" : ""}}>3.85 <= IPK <= 4.00</option>
-                                                                                <option value="70" {{$item->ipk == "70" ? "selected" : ""}}>3.50 <= IPK < 3.85</option>
-                                                                                <option value="40" {{$item->ipk == "40" ? "selected" : ""}} >3.25 <= IPK < 3.50</option>
-                                                                                <option value="10" {{$item->ipk == "10" ? "selected" : ""}} >3.00 <= IPK < 3.25</option>
-                                                                            </select>
-                                                                        </div>
-                                                                        <div class="mb-3">
-                                                                            <label class="text-black font-w500">Essay</label>
-                                                                            <select type="text" class="form-control form-select" name="editessay">
-                                                                                <option value="100" {{$item->essay == "100" ? "selected" : ""}}>Sangat Baik</option>
-                                                                                <option value="70" {{$item->essay == "70" ? "selected" : ""}}>Baik</option>
-                                                                                <option value="40" {{$item->essay == "40" ? "selected" : ""}}>Cukup</option>
-                                                                                <option value="10" {{$item->essay == "10" ? "selected" : ""}}>Kurang</option>
-                                                                            </select>
-                                                                        </div>
-                                                                        <div class="mb-3">
-                                                                            <label class="text-black font-w500">Gaji Orang Tua</label>
-                                                                            <select type="text" class="form-control form-select" name="editgaji">
-                                                                                <option value="10" {{$item->gaji == "10" ? "selected" : ""}}>Gaji <= Rp 1.500.000</option>
-                                                                                <option value="40" {{$item->gaji == "40" ? "selected" : ""}}>Rp 1.500.000 < Gaji <= Rp. 4.000.000 </option>
-                                                                                <option value="70" {{$item->gaji == "70" ? "selected" : ""}}>Rp. 4.000.000 < Gaji <= Rp. 7.000.000</option>
-                                                                                <option value="100" {{$item->gaji == "100" ? "selected" : ""}}>Gaji > Rp .7.000.000 </option>
-                                                                            </select>
-                                                                        </div>
                                                                         <div class="mb-3">
                                                                             <label class="text-black font-w500">Status Penerimaan</label>
                                                                             <select type="text" class="form-control form-select" name="editstatus">

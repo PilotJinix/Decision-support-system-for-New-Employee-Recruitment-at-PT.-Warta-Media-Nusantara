@@ -21,6 +21,8 @@
                                     <tr>
                                         <th>No</th>
                                         <th>Periode</th>
+                                        <th>Nama</th>
+                                        <th>Nim</th>
                                         <th>Dokumen</th>
                                         <th>Prestasi Pengalaman</th>
                                         <th>Essay</th>
@@ -38,6 +40,8 @@
                                         <tr>
                                             <td>{{$i++}}</td>
                                             <td>{{__($item->name)}}</td>
+                                            <td>{{__($item->nama_lengkap)}}</td>
+                                            <td>{{__($item->nim)}}</td>
                                             <td>{{__($item->dokumen)}}</td>
                                             <td>{{__($item->prestasi)}}</td>
                                             <td>{{__($item->essay)}}</td>

@@ -27,12 +27,37 @@ class FinalRankController extends Controller
         //Colections kecil to Besar
         $datacalon1 = $data->sortBy("jumlah");
 
-
-//        $data = collect($datacalon)->sortBy("jumlah", "DESC");
-
 //        dd($data);
 
+        $count = 0;
+        foreach ($datacalon as $item){
+            if ($count < 1){
+                DB::table("calon_penerima")->where("id", $item->id)->update([
+                    "status" => "Lolos",
+                ]);
+            }else{
+                DB::table("calon_penerima")->where("id", $item->id)->update([
+                    "status" => "Tidak Lolos",
+                ]);
+            }
+            $count++;
+        }
+
         return view("admin.saw_system.final_rank", compact("datacalon", "akun"));
+
+    }
+
+    public function editfinalstatus(Request $request, $id){
+
+        $request->validate([
+            "editstatus" => "required|string"
+        ]);
+
+        DB::table("calon_penerima")->where("id", $id)->update([
+            "status" => $request->editstatus,
+        ]);
+
+        return redirect(route("tabel-final-ranking"));
 
     }
 }

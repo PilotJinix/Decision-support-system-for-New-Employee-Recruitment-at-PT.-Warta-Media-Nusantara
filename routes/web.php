@@ -41,6 +41,7 @@ Route::group(["middleware" => ["auth", "Level:admin"]], function (){
     Route::get('tabel-ranking', 'Admin\RankingController@view_ranking' )->name('tabel-ranking');
 
     Route::get('tabel-final-ranking', 'Admin\FinalRankController@view_final_rank' )->name('tabel-final-ranking');
+    Route::post("tabel-final-ranking/edittabel-final-ranking/{id}", "Admin\FinalRankController@editfinalstatus")->name("edit-tabel-final-ranking");
 
 });
 
