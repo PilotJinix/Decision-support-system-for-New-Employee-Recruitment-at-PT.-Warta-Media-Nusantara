@@ -28,6 +28,7 @@
                                         <th>IPK</th>
                                         <th>Essay</th>
                                         <th>Gaji Orang Tua</th>
+                                        <th>Jumlah</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -45,6 +46,7 @@
                                             <td>{{__($item->ipk)}}</td>
                                             <td>{{__($item->essay)}}</td>
                                             <td>{{__($item->gaji)}}</td>
+                                            <td>{{__($item->jumlah)}}</td>
                                         </tr>
                                     @endforeach
                                     </tbody>

@@ -129,7 +129,7 @@
                     <ul aria-expanded="false">
                         <li><a href="{{route("tabel-normalisasi")}}">Tabel Normalisasi</a></li>
                         <li><a href="{{route("tabel-ranking")}}">Tabel Ranking</a></li>
-                        <li><a href="#">Tabel Peringkat</a></li>
+                        <li><a href="{{route("tabel-final-ranking")}}">Tabel Peringkat</a></li>
                     </ul>
                 </li>
 

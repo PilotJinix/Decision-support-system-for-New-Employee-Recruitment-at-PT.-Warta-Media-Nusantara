@@ -8,7 +8,8 @@ use Illuminate\Support\Facades\DB;
 
 class RankingController extends Controller
 {
-    public function ranking(Request $request){
+
+    public function view_ranking(Request $request){
         $session = $request->session()->get("username");
 
         if ($session == null){
@@ -16,6 +17,12 @@ class RankingController extends Controller
         }
         $akun = DB::table('users')->where('username', $session)->first();
 
+        $datacalon = $this->ranking();
+
+        return view("admin.saw_system.ranking", compact("datacalon", "akun"));
+    }
+
+    public function ranking(){
         $datamahasiswa=[];
 
         $bobot_Dokumen="";
@@ -54,9 +61,11 @@ class RankingController extends Controller
             $item->essay = $item->essay*$bobot_Essay;
             $item->ipk = $item->ipk*$bobot_IPK;
             $item->gaji = $item->gaji*$bobot_Gaji;
+            $item->jumlah = $item->dokumen + $item->prestasi + $item->essay + $item->ipk + $item->gaji;
         }
 
-        dd($datacalon);
+//        dd($datacalon);
 
+        return $datacalon;
     }
 }

@@ -38,7 +38,9 @@ Route::group(["middleware" => ["auth", "Level:admin"]], function (){
 
     Route::get('tabel-normalisasi', 'Admin\SAwController@view_normalisasi' )->name('tabel-normalisasi');
 
-    Route::get('tabel-ranking', 'Admin\RankingController@ranking' )->name('tabel-ranking');
+    Route::get('tabel-ranking', 'Admin\RankingController@view_ranking' )->name('tabel-ranking');
+
+    Route::get('tabel-final-ranking', 'Admin\FinalRankController@view_final_rank' )->name('tabel-final-ranking');
 
 });
 
