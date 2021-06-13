@@ -130,6 +130,10 @@
                                                         <option value="Beasiswa">Beasiswa</option>
                                                     </select>
                                                 </div>
+                                                <div class="mb-3">
+                                                    <label class="text-black font-w500">Kuota Diterima</label>
+                                                    <input type="number" class="form-control" name="kuota" min="1">
+                                                </div>
                                                 <div class="form-group">
                                                     <button type="submit" class="btn btn-primary">Create</button>
                                                 </div>
@@ -148,6 +152,7 @@
                                         <th>Name</th>
                                         <th>Kategori</th>
                                         <th>Periode</th>
+                                        <th>Kuota</th>
                                         <th>Status</th>
                                         <th>Action</th>
                                     </tr>
@@ -162,6 +167,7 @@
                                             <td>{{__($item->name)}}</td>
                                             <td>{{__($item->kategori)}}</td>
                                             <td>{{__($item->id)}}</td>
+                                            <td>{{__($item->kuota)}}</td>
                                             <td>
                                                 @if($item->status == "0")
                                                     <span class="badge light badge-success">Dibuka</span>
@@ -191,6 +197,10 @@
                                                                             <select type="text" class="form-control form-select" name="editkategori">
                                                                                 <option value="Beasiswa" {{$item->kategori == "Beasiswa" ? "selected" : ""}}>Beasiswa</option>
                                                                             </select>
+                                                                        </div>
+                                                                        <div class="mb-3">
+                                                                            <label class="text-black font-w500">Kuota Diterima</label>
+                                                                            <input type="number" class="form-control" name="editkuota" value="{{__($item->kuota)}}" min="1">
                                                                         </div>
                                                                         <div class="mb-3">
                                                                             <label class="text-black font-w500">Status Penerimaan</label>

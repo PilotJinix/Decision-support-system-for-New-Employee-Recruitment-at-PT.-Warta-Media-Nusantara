@@ -108,11 +108,10 @@
                         <span class="nav-text">Dashboard</span>
                     </a>
                     <ul aria-expanded="false">
+                        <li><a href="{{route("dashboard")}}">Dashboard</a></li>
                         <li><a href="{{route("calonpenerima")}}">Data calon Penerima</a></li>
-                        <li><a href="#">Data Penerima</a></li>
-                        <li><a href="#">Data Reviews</a></li>
+{{--                        <li><a href="#">Data Reviews</a></li>--}}
                     </ul>
-
                 </li>
                 <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                         <i class="flaticon-013-checkmark"></i>

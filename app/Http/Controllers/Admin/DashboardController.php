@@ -25,11 +25,13 @@ class DashboardController extends Controller
         $request->validate([
             "name" => "required|string",
             "kategori" => "required|string",
+            "kuota" => "required"
         ]);
 
         DB::table("periode_penerimaan")->insert([
             "name" => $request->name,
             "kategori" => $request->kategori,
+            "kuota" => $request->kuota
         ]);
 
         return redirect()->route('dashboard')->with("saved", "Data Penerimaan Berhasil ditambahkan");
@@ -45,12 +47,14 @@ class DashboardController extends Controller
         $request -> validate([
             "editname" => "required|string",
             "editkategori" => "required|string",
+            "editkuota" => "required|string",
             "editstatus" => "required|string",
         ]);
 
         DB::table("periode_penerimaan")->where("id", $id)->update([
             "name" => $request->editname,
             "kategori" => $request->editkategori,
+            "kuota" => $request->editkuota,
             "status" => $request->editstatus,
         ]);
         return redirect(route("dashboard"));
