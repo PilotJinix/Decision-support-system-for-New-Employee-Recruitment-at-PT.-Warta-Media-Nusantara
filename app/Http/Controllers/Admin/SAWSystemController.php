@@ -16,17 +16,43 @@ class SAWSystemController extends Controller
         }
         $akun = DB::table('users')->where('username', $session)->first();
 
+        $dataperiode = DB::table("periode_penerimaan")
+            ->where("status", 0)
+            ->get();
+
         $data["datanormalisasi"] = [];
         $data["data_ranking"] = [];
         $data["data_final_ranking"] = [];
-//        $data = $this->SWA_System();
-//        dd($data["data_final_ranking"]);
 
-        return view("admin.saw_system.saw_system", compact("data", "akun"));
-
+        return view("admin.saw_system.saw_system", compact("data", "akun", "dataperiode"));
     }
 
-    public function SWA_System(){
+    public function search(Request $request){
+        $session = $request->session()->get("username");
+
+        if ($session == null){
+            return redirect(route('index'));
+        }
+        $akun = DB::table('users')->where('username', $session)->first();
+
+        $dataperiode = DB::table("periode_penerimaan")
+            ->where("status", 0)
+            ->get();
+
+        try {
+            $datakuota = DB::table("periode_penerimaan")
+                ->where("id", $request["periode"])
+                ->first();
+
+            $data = $this->SWA_System($datakuota->kuota);
+
+            return view("admin.saw_system.saw_system", compact("data", "akun", "dataperiode" ));
+        }catch (\Throwable $th){
+            return redirect(route("saw_system"));
+        }
+    }
+
+    public function SWA_System($kuota){
 
 //        Variabel Normalisasi
         $datamahasiswa=[];
@@ -148,7 +174,7 @@ class SAWSystemController extends Controller
 
         $count = 0;
         foreach ($data_final_ranking as $item){
-            if ($count < 1){
+            if ($count < $kuota){
                 DB::table("calon_penerima")->where("id", $item->id)->update([
                     "status" => "Lolos",
                 ]);

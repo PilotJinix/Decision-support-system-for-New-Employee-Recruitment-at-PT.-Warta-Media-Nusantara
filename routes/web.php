@@ -45,6 +45,7 @@ Route::group(["middleware" => ["auth", "Level:admin"]], function (){
 
 
     Route::get('saw_system', 'Admin\SAWSystemController@index' )->name('saw_system');
+    Route::post('saw_system/search', 'Admin\SAWSystemController@search' )->name('saw_system_search');
 });
 
 Route::group(["middleware" => ["auth", "Level:user"]], function (){

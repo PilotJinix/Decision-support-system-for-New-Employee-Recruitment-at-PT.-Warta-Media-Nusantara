@@ -14,15 +14,17 @@
                     </div>
                     <div class="card-body">
                         <div class="basic-form">
-                            <form action="#">
+                            <form action="{{route("saw_system_search")}}" method="POST">
+                                @csrf
                                 <div class="input-group">
-                                    <select class="default-select form-control wide">
-                                        <option selected>Choose...</option>
-                                        <option value="1">One</option>
-                                        <option value="2">Two</option>
-                                        <option value="3">Three</option>
+                                    <select name="periode" class="default-select form-control wide">
+                                        <option value="0" selected>Choose...</option>
+                                        @foreach($dataperiode as $item)
+                                            <option value="{{$item->id}}" {{old("periode") == $item->id ? 'selected' : ''}}>{{$item->name}}</option>
+                                        @endforeach
+
                                     </select>
-                                    <button class="btn btn-primary" type="button">Button</button>
+                                    <button class="btn btn-primary" type="submit">Button</button>
                                 </div>
                             </form>
                         </div>
