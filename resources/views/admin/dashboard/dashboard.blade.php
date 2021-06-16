@@ -28,7 +28,7 @@
 									</span>
                                         <div class="media-body">
                                             <p class="mb-1">College Student</p>
-                                            <h4 class="mb-0">200</h4>
+                                            <h4 class="mb-0">{{$murid}}</h4>
                                         </div>
                                     </div>
                                 </div>
@@ -49,7 +49,7 @@
 									</span>
                                         <div class="media-body">
                                             <p class="mb-1">Scholarship Applicants</p>
-                                            <h4 class="mb-0">102</h4>
+                                            <h4 class="mb-0">{{$pengajuaan}}</h4>
                                         </div>
                                     </div>
                                 </div>
@@ -67,7 +67,7 @@
 									</span>
                                         <div class="media-body">
                                             <p class="mb-1">Application Approved</p>
-                                            <h4 class="mb-0">3</h4>
+                                            <h4 class="mb-0">{{$diterima}}</h4>
                                         </div>
                                     </div>
                                 </div>
@@ -86,7 +86,7 @@
 									</span>
                                         <div class="media-body">
                                             <p class="mb-1">Scholarship Period</p>
-                                            <h4 class="mb-0">4</h4>
+                                            <h4 class="mb-0">{{$periode}}</h4>
                                         </div>
                                     </div>
                                 </div>

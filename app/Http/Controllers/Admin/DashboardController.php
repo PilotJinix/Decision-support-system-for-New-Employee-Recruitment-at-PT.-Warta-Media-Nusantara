@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\DB;
 class DashboardController extends Controller
 {
     public function index(Request $request){
+
         $session = $request->session()->get("username");
 
         if ($session == null){
@@ -18,7 +19,13 @@ class DashboardController extends Controller
         $data_periode = DB::table("periode_penerimaan")->paginate(10);
 
         $akun = DB::table('users')->where('username', $session)->first();
-        return view('admin.dashboard.dashboard', compact("akun", "data_periode"));
+
+        $murid = DB::table("users")->where("level", "user")->count();
+        $pengajuaan = DB::table("calon_penerima")->count();
+        $diterima = DB::table("calon_penerima")->where("status", "Lolos")->count();
+        $periode = DB::table("periode_penerimaan")->count();
+
+        return view('admin.dashboard.dashboard', compact("akun", "data_periode", "murid", "pengajuaan", "diterima", "periode"));
     }
 
     public function periode(Request $request){

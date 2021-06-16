@@ -19,7 +19,13 @@ class AjuanController extends Controller
         }
         $akun = DB::table('users')->where('username', $session)->first();
 
-        $dataperiode = DB::table("periode_penerimaan")->where("status", 0)->get();
+
+//        dd($akun);
+
+        $dataperiode = DB::table("periode_penerimaan")
+            ->where("status", "=", 0)
+            ->get();
+
         $datacalon = DB::table("calon_penerima")
             ->join("periode_penerimaan", "periode_penerimaan.id", "=", "calon_penerima.id_periode")
             ->where("periode_penerimaan.status", "=", 0)->where("calon_penerima.id_user", "=", $akun->id)
@@ -30,12 +36,9 @@ class AjuanController extends Controller
     }
 
     public function calonPenerima(Request $request){
-        $session = $request->session()->get("username");
+//        $session = $request->session()->get("username");
 
         $data = Auth::user()->id;
-
-//        var_dump($session);
-
 
         $request->validate([
             "id_periode" => "required",

@@ -20,6 +20,7 @@ class CalonPenerimaController extends Controller
         $akun = DB::table('users')->where('username', $session)->first();
 
         $dataperiode = DB::table("periode_penerimaan")->where("status", 0)->get();
+
         $datacalon = DB::table("calon_penerima")
             ->join("periode_penerimaan", "periode_penerimaan.id", "=", "calon_penerima.id_periode")
             ->join("users", "users.id", "=", "calon_penerima.id_user")
