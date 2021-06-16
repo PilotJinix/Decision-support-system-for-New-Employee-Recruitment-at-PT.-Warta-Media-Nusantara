@@ -35,7 +35,7 @@
                                     @csrf
                                     <div class="mb-3">
                                         <label class="mb-1"><strong>Username</strong></label>
-                                        <input type="text" class="form-control @error('username') is invalid @enderror" placeholder="admin" name="username" required >
+                                        <input type="text" class="form-control @error('username') is invalid @enderror" placeholder="Username" name="username" required >
                                         @error('username')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{$message}}</strong>

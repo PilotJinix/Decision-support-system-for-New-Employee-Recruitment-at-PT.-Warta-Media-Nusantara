@@ -25,9 +25,32 @@ class AjuanController extends Controller
 
 
 
-        $dataperiode= PeriodePenerimaan::doesnthave('penerima')
-            ->where("status", 0)
+//        $dataperiode= PeriodePenerimaan::doesnthave('penerima')
+//            ->where("status", 0)
+//            ->get();
+
+//        $dataperiode = PeriodePenerimaan::w;
+
+//        SomeModel::select(..)->whereNotIn('book_price', [100,200])->get();
+
+        $dataperiode1 = CalonPenerima::select("id_periode")
+            ->where("id_user", $akun->id)
             ->get();
+
+        $isi = [];
+
+        foreach ($dataperiode1 as $item){
+//            $isi[]=$item;
+            array_push($isi, $item->id_periode);
+        }
+//        return $isi;
+
+        $dataperiode = PeriodePenerimaan::whereNotIn("id", $isi)
+            ->get();
+
+//        return $datacek;
+
+//        dd($dataperiode);
 
 
         $datacalon = DB::table("calon_penerima")

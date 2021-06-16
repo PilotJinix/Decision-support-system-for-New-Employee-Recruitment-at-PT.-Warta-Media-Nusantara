@@ -3,6 +3,7 @@
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 class UserSeeder extends Seeder
 {
@@ -30,5 +31,18 @@ class UserSeeder extends Seeder
             'password' => Hash::make('user12345'),
             "level" => "user"
         ]);
+
+
+        for ($i = 0; $i < 100; $i++){
+            DB::table('users')->insert([
+                'username' => 'username'.$i,
+                "nama_lengkap" => "Nama User ".$i,
+                "nim" => Str::random(5),
+                'email' => "usermail".$i."@gmail.com",
+                'password' => Hash::make('user12345'),
+                "level" => "user"
+            ]);
+        }
+
     }
 }
