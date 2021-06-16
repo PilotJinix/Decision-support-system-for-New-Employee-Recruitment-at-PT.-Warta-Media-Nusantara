@@ -13,7 +13,7 @@ class CalonPenerima extends Model
     ];
 
     public function periode(){
-        return $this->belongsTo("App\PeriodePenerimaan");
+        return $this->belongsTo("App\PeriodePenerimaan",'id_periode',"id");
     }
 
 }

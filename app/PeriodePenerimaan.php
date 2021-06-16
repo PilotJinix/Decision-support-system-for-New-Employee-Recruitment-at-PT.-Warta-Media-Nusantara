@@ -15,6 +15,6 @@ class PeriodePenerimaan extends Model{
     ];
 
     public function penerima(){
-        return $this->hasMany("App\CalonPenerima");
+        return $this->hasMany("App\CalonPenerima","id_periode","id");
     }
 }

@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\Mahasiswa;
 
+use App\CalonPenerima;
 use App\Http\Controllers\Controller;
+use App\PeriodePenerimaan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -14,6 +16,8 @@ class AjuanController extends Controller
     public function index(Request $request){
         $session = $request->session()->get("username");
 
+
+
         if ($session == null){
             return redirect(route('index'));
         }
@@ -22,9 +26,11 @@ class AjuanController extends Controller
 
 //        dd($akun);
 
-        $dataperiode = DB::table("periode_penerimaan")
-            ->where("status", "=", 0)
-            ->get();
+//        $dataperiode = DB::table("periode_penerimaan")
+//            ->where("status", "=", 0)
+//            ->get();
+        $dataperiode= PeriodePenerimaan::doesnthave('penerima')->get();
+//        dd($dataperiode );
 
         $datacalon = DB::table("calon_penerima")
             ->join("periode_penerimaan", "periode_penerimaan.id", "=", "calon_penerima.id_periode")
