@@ -18,6 +18,6 @@ class Level
         if (in_array($request->user()->level,$levels)){
             return $next($request);
         }
-        return redirect(route('index'));
+        return redirect(route('logout'));
     }
 }
