@@ -24,13 +24,11 @@ class AjuanController extends Controller
         $akun = DB::table('users')->where('username', $session)->first();
 
 
-//        dd($akun);
 
-//        $dataperiode = DB::table("periode_penerimaan")
-//            ->where("status", "=", 0)
-//            ->get();
-        $dataperiode= PeriodePenerimaan::doesnthave('penerima')->get();
-//        dd($dataperiode );
+        $dataperiode= PeriodePenerimaan::doesnthave('penerima')
+            ->where("status", 0)
+            ->get();
+
 
         $datacalon = DB::table("calon_penerima")
             ->join("periode_penerimaan", "periode_penerimaan.id", "=", "calon_penerima.id_periode")
