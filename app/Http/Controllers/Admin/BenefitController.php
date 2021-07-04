@@ -21,7 +21,7 @@ class BenefitController extends Controller
         $databenefit = DB::table("kriteria_benefit")
             ->join("periode_penerimaan", "periode_penerimaan.id", "=", "kriteria_benefit.id_periode")
             ->where("periode_penerimaan.status", 0)
-            ->select("periode_penerimaan.name","kriteria_benefit.*")->latest()->paginate(10);
+            ->select("periode_penerimaan.name","kriteria_benefit.*")->get();
 
 
         return view("admin.benefit.benefit", compact("akun", "databenefit", "dataperiode"));

@@ -27,7 +27,7 @@ class CalonPenerimaController extends Controller
             ->join("periode_penerimaan", "periode_penerimaan.id", "=", "calon_penerima.id_periode")
             ->join("users", "users.id", "=", "calon_penerima.id_user")
             ->where("periode_penerimaan.status", "=", 0)
-            ->select("periode_penerimaan.name","calon_penerima.*", "users.nama_lengkap","users.nim")->latest()->paginate(10);
+            ->select("periode_penerimaan.name","calon_penerima.*", "users.nama_lengkap","users.nim")->get();
 
 
         return view("admin.dataCalonPenerima.dataCalonPenerima", compact("datacalon", "akun", "dataperiode"));
@@ -84,6 +84,21 @@ class CalonPenerimaController extends Controller
         ]);
 
         return redirect(route("calonpenerima"));
+
+    }
+
+    public function deletecalonPenerima($id){
+        DB::table("calon_penerima")->where("id", $id)->delete();
+
+        return redirect(route("calonpenerima"));
+
+    }
+
+    public function download($id){
+        $data = DB::table("calon_penerima")->where("id", $id)->first();
+        $file = $data->data;
+        return response()->download(storage_path("app/public/file/".$file));
+
 
     }
 

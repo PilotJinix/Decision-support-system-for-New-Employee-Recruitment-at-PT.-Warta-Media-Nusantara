@@ -30,6 +30,8 @@ Route::group(["middleware" => ["auth", "Level:admin"]], function (){
     Route::get('calonpenerima', 'Admin\CalonPenerimaController@index' )->name('calonpenerima');
     Route::post('calonpenerima/create-calonpenerima', 'Admin\CalonPenerimaController@calonPenerima')->name('create-calonpenerima');
     Route::post("calonpenerima/editcalonpenerima/{id}", "Admin\CalonPenerimaController@editcalonPenerima")->name("edit-calonPenerima");
+    Route::get("dashboard/deletepenerimaan/{id}", "Admin\CalonPenerimaController@deletecalonPenerima")->name("deletepenerimaan");
+    Route::get('calonpenerima/download/{id}', 'Admin\CalonPenerimaController@download')->name('download');
 
     Route::get('kriteria-benefit', 'Admin\BenefitController@index' )->name('benefit');
     Route::post('kriteria-benefit/create-benefit', 'Admin\BenefitController@benefit')->name('create-benefit');

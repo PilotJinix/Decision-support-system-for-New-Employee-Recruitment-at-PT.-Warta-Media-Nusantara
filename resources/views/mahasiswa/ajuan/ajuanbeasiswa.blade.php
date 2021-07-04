@@ -84,7 +84,7 @@
                                         <th>IPK</th>
                                         <th>Gaji Orang Tua</th>
                                         <th>Status</th>
-                                        <th>Action</th>
+{{--                                        <th>Action</th>--}}
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -106,71 +106,71 @@
                                                     <span class="badge light badge-info">Sedang diproses</span>
                                                 @endif
                                             </td>
-                                            <td>
-                                                <div class="d-flex">
-                                                    <a href="javascript:void(0)" class="btn btn-primary shadow btn-xs sharp me-1" data-bs-toggle="modal" data-bs-target="{{__("#editkegiatan".$item->id)}}"><i class="fa fa-pencil"></i></a>
-                                                    <div class="modal fade" id="{{__('editkegiatan'.$item->id)}}">
-                                                        <div class="modal-dialog" role="document">
-                                                            <div class="modal-content">
-                                                                <div class="modal-header">
-                                                                    <h5 class="modal-title">Edit Ajuan Beasiswa</h5>
-                                                                    <a href="javascript:void(0);" class="btn-close" data-bs-dismiss="modal"></a>
-                                                                </div>
-                                                                <div class="modal-body">
-                                                                    <form method="POST" action="{{route("edit-calonPenerima", $item->id)}}">
-                                                                        @csrf
-                                                                        <div class="mb-3">
-                                                                            <label class="text-black font-w500">IPK</label>
-                                                                            <select type="text" class="form-control form-select" name="editipk">
-                                                                                <option value="100" {{$item->ipk == "100" ? "selected" : ""}}>3.85 <= IPK <= 4.00</option>
-                                                                                <option value="70" {{$item->ipk == "70" ? "selected" : ""}}>3.50 <= IPK < 3.85</option>
-                                                                                <option value="40" {{$item->ipk == "40" ? "selected" : ""}} >3.25 <= IPK < 3.50</option>
-                                                                                <option value="10" {{$item->ipk == "10" ? "selected" : ""}} >3.00 <= IPK < 3.25</option>
-                                                                            </select>
-                                                                        </div>
-                                                                        <div class="mb-3">
-                                                                            <label class="text-black font-w500">Gaji Orang Tua</label>
-                                                                            <select type="text" class="form-control form-select" name="editgaji">
-                                                                                <option value="10" {{$item->gaji == "10" ? "selected" : ""}}>Gaji <= Rp 1.500.000</option>
-                                                                                <option value="40" {{$item->gaji == "40" ? "selected" : ""}}>Rp 1.500.000 < Gaji <= Rp. 4.000.000 </option>
-                                                                                <option value="70" {{$item->gaji == "70" ? "selected" : ""}}>Rp. 4.000.000 < Gaji <= Rp. 7.000.000</option>
-                                                                                <option value="100" {{$item->gaji == "100" ? "selected" : ""}}>Gaji > Rp .7.000.000 </option>
+{{--                                            <td>--}}
+{{--                                                <div class="d-flex">--}}
+{{--                                                    <a href="javascript:void(0)" class="btn btn-primary shadow btn-xs sharp me-1" data-bs-toggle="modal" data-bs-target="{{__("#editkegiatan".$item->id)}}"><i class="fa fa-pencil"></i></a>--}}
+{{--                                                    <div class="modal fade" id="{{__('editkegiatan'.$item->id)}}">--}}
+{{--                                                        <div class="modal-dialog" role="document">--}}
+{{--                                                            <div class="modal-content">--}}
+{{--                                                                <div class="modal-header">--}}
+{{--                                                                    <h5 class="modal-title">Edit Ajuan Beasiswa</h5>--}}
+{{--                                                                    <a href="javascript:void(0);" class="btn-close" data-bs-dismiss="modal"></a>--}}
+{{--                                                                </div>--}}
+{{--                                                                <div class="modal-body">--}}
+{{--                                                                    <form method="POST" action="{{route("edit-calonPenerima", $item->id)}}">--}}
+{{--                                                                        @csrf--}}
+{{--                                                                        <div class="mb-3">--}}
+{{--                                                                            <label class="text-black font-w500">IPK</label>--}}
+{{--                                                                            <select type="text" class="form-control form-select" name="editipk">--}}
+{{--                                                                                <option value="100" {{$item->ipk == "100" ? "selected" : ""}}>3.85 <= IPK <= 4.00</option>--}}
+{{--                                                                                <option value="70" {{$item->ipk == "70" ? "selected" : ""}}>3.50 <= IPK < 3.85</option>--}}
+{{--                                                                                <option value="40" {{$item->ipk == "40" ? "selected" : ""}} >3.25 <= IPK < 3.50</option>--}}
+{{--                                                                                <option value="10" {{$item->ipk == "10" ? "selected" : ""}} >3.00 <= IPK < 3.25</option>--}}
+{{--                                                                            </select>--}}
+{{--                                                                        </div>--}}
+{{--                                                                        <div class="mb-3">--}}
+{{--                                                                            <label class="text-black font-w500">Gaji Orang Tua</label>--}}
+{{--                                                                            <select type="text" class="form-control form-select" name="editgaji">--}}
+{{--                                                                                <option value="10" {{$item->gaji == "10" ? "selected" : ""}}>Gaji <= Rp 1.500.000</option>--}}
+{{--                                                                                <option value="40" {{$item->gaji == "40" ? "selected" : ""}}>Rp 1.500.000 < Gaji <= Rp. 4.000.000 </option>--}}
+{{--                                                                                <option value="70" {{$item->gaji == "70" ? "selected" : ""}}>Rp. 4.000.000 < Gaji <= Rp. 7.000.000</option>--}}
+{{--                                                                                <option value="100" {{$item->gaji == "100" ? "selected" : ""}}>Gaji > Rp .7.000.000 </option>--}}
 
-                                                                            </select>
-                                                                        </div>
-                                                                        <div class="form-group">
-                                                                            <button type="submit" class="btn btn-primary btn-block">Save</button>
-                                                                        </div>
-                                                                    </form>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <a href="javascript:void(0)" class="btn btn-danger shadow btn-xs sharp me-1" data-bs-toggle="modal" data-bs-target="{{__("#modal".$item->id)}}"><i class="fa fa-trash"></i></a>
-                                                    <div class="modal fade" id={{__('modal'.$item->id)}} tabindex="-1" role="dialog"
-                                                         aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                                                        <div class="modal-dialog modal-dialog-centered" role="document">
-                                                            <div class="modal-content">
-                                                                <div class="modal-header">
-                                                                    <h5 class="modal-title" id="exampleModalCenterTitle">Hapus Akun</h5>
-                                                                    <a href="javascript:void(0);" class="btn-close" data-bs-dismiss="modal"></a>
-                                                                </div>
-                                                                <div class="modal-body text-center">
-                                                                    <i class="fa fa-warning"
-                                                                       style="font-size: 100px; color: orange"></i>
-                                                                    <p>{{__("Semua data periode ".$item->name." akan dihapus!")}}
-                                                                    </p>
-                                                                </div>
-                                                                <div class="modal-footer">
-                                                                    <a href="{{route("deleteperiode", $item->id)}}">
-                                                                        <button type="button" class="btn btn-danger">Hapus Data</button>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </td>
+{{--                                                                            </select>--}}
+{{--                                                                        </div>--}}
+{{--                                                                        <div class="form-group">--}}
+{{--                                                                            <button type="submit" class="btn btn-primary btn-block">Save</button>--}}
+{{--                                                                        </div>--}}
+{{--                                                                    </form>--}}
+{{--                                                                </div>--}}
+{{--                                                            </div>--}}
+{{--                                                        </div>--}}
+{{--                                                    </div>--}}
+{{--                                                    <a href="javascript:void(0)" class="btn btn-danger shadow btn-xs sharp me-1" data-bs-toggle="modal" data-bs-target="{{__("#modal".$item->id)}}"><i class="fa fa-trash"></i></a>--}}
+{{--                                                    <div class="modal fade" id={{__('modal'.$item->id)}} tabindex="-1" role="dialog"--}}
+{{--                                                         aria-labelledby="exampleModalCenterTitle" aria-hidden="true">--}}
+{{--                                                        <div class="modal-dialog modal-dialog-centered" role="document">--}}
+{{--                                                            <div class="modal-content">--}}
+{{--                                                                <div class="modal-header">--}}
+{{--                                                                    <h5 class="modal-title" id="exampleModalCenterTitle">Hapus Akun</h5>--}}
+{{--                                                                    <a href="javascript:void(0);" class="btn-close" data-bs-dismiss="modal"></a>--}}
+{{--                                                                </div>--}}
+{{--                                                                <div class="modal-body text-center">--}}
+{{--                                                                    <i class="fa fa-warning"--}}
+{{--                                                                       style="font-size: 100px; color: orange"></i>--}}
+{{--                                                                    <p>{{__("Semua data periode ".$item->name." akan dihapus!")}}--}}
+{{--                                                                    </p>--}}
+{{--                                                                </div>--}}
+{{--                                                                <div class="modal-footer">--}}
+{{--                                                                    <a href="{{route("deleteperiode", $item->id)}}">--}}
+{{--                                                                        <button type="button" class="btn btn-danger">Hapus Data</button>--}}
+{{--                                                                    </a>--}}
+{{--                                                                </div>--}}
+{{--                                                            </div>--}}
+{{--                                                        </div>--}}
+{{--                                                    </div>--}}
+{{--                                                </div>--}}
+{{--                                            </td>--}}
                                         </tr>
                                     @endforeach
                                     </tbody>

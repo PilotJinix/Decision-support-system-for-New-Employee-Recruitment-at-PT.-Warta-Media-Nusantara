@@ -28,6 +28,7 @@
                                         <th>Essay</th>
                                         <th>IPK</th>
                                         <th>Gaji Orang Tua</th>
+{{--                                        <th>Data</th>--}}
                                         <th>Status</th>
                                         <th>Action</th>
                                     </tr>
@@ -47,6 +48,7 @@
                                             <td>{{__($item->essay)}}</td>
                                             <td>{{__($item->ipk)}}</td>
                                             <td>{{__($item->gaji)}}</td>
+{{--                                            <td></td>--}}
                                             <td>
                                                 @if($item->status == "Lolos")
                                                     <span class="badge light badge-success">Lolos</span>
@@ -146,7 +148,7 @@
                                                                     </p>
                                                                 </div>
                                                                 <div class="modal-footer">
-                                                                    <a href="{{route("deleteperiode", $item->id)}}">
+                                                                    <a href="{{route("deletepenerimaan", $item->id)}}">
                                                                         <button type="button" class="btn btn-danger">Hapus Data</button>
                                                                     </a>
                                                                 </div>

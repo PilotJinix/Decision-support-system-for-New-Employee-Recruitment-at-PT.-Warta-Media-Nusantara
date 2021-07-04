@@ -151,7 +151,7 @@
                                         <th>Nim</th>
                                         <th>Jumlah</th>
                                         <th>Status</th>
-                                        <th>Action</th>
+{{--                                        <th>Action</th>--}}
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -174,60 +174,60 @@
                                                     <span class="badge light badge-info">Sedang diproses</span>
                                                 @endif
                                             </td>
-                                            <td>
-                                                <div class="d-flex">
-                                                    <a href="javascript:void(0)" class="btn btn-primary shadow btn-xs sharp me-1" data-bs-toggle="modal" data-bs-target="{{__("#editkegiatan".$item->id)}}"><i class="fa fa-pencil"></i></a>
-                                                    <div class="modal fade" id="{{__('editkegiatan'.$item->id)}}">
-                                                        <div class="modal-dialog" role="document">
-                                                            <div class="modal-content">
-                                                                <div class="modal-header">
-                                                                    <h5 class="modal-title">Edit Status</h5>
-                                                                    <a href="javascript:void(0);" class="btn-close" data-bs-dismiss="modal"></a>
-                                                                </div>
-                                                                <div class="modal-body">
-                                                                    <form method="POST" action="{{route("edit-tabel-final-ranking", $item->id)}}">
-                                                                        @csrf
-                                                                        <div class="mb-3">
-                                                                            <label class="text-black font-w500">Status Penerimaan</label>
-                                                                            <select type="text" class="form-control form-select" name="editstatus">
-                                                                                <option value="Lolos" {{$item->status == "Lolos" ? "selected" : ""}}>Lolos</option>
-                                                                                <option value="Tidak Lolos" {{$item->status == "Tidak Lolos" ? "selected" : ""}}>Tidak Lolos</option>
-                                                                                <option value="Sedang diproses" {{$item->status == "Sedang diproses" ? "selected" : ""}}>Sedang diproses</option>
-                                                                            </select>
-                                                                        </div>
-                                                                        <div class="form-group">
-                                                                            <button type="submit" class="btn btn-primary btn-block">Save</button>
-                                                                        </div>
-                                                                    </form>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <a href="javascript:void(0)" class="btn btn-danger shadow btn-xs sharp me-1" data-bs-toggle="modal" data-bs-target="{{__("#modal".$item->id)}}"><i class="fa fa-trash"></i></a>
-                                                    <div class="modal fade" id={{__('modal'.$item->id)}} tabindex="-1" role="dialog"
-                                                         aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                                                        <div class="modal-dialog modal-dialog-centered" role="document">
-                                                            <div class="modal-content">
-                                                                <div class="modal-header">
-                                                                    <h5 class="modal-title" id="exampleModalCenterTitle">Hapus Akun</h5>
-                                                                    <a href="javascript:void(0);" class="btn-close" data-bs-dismiss="modal"></a>
-                                                                </div>
-                                                                <div class="modal-body text-center">
-                                                                    <i class="fa fa-warning"
-                                                                       style="font-size: 100px; color: orange"></i>
-                                                                    <p>{{__("Semua data akan dihapus!")}}
-                                                                    </p>
-                                                                </div>
-                                                                <div class="modal-footer">
-                                                                    <a href="{{route("deleteperiode", $item->id)}}">
-                                                                        <button type="button" class="btn btn-danger">Hapus Data</button>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </td>
+{{--                                            <td>--}}
+{{--                                                <div class="d-flex">--}}
+{{--                                                    <a href="javascript:void(0)" class="btn btn-primary shadow btn-xs sharp me-1" data-bs-toggle="modal" data-bs-target="{{__("#editkegiatan".$item->id)}}"><i class="fa fa-pencil"></i></a>--}}
+{{--                                                    <div class="modal fade" id="{{__('editkegiatan'.$item->id)}}">--}}
+{{--                                                        <div class="modal-dialog" role="document">--}}
+{{--                                                            <div class="modal-content">--}}
+{{--                                                                <div class="modal-header">--}}
+{{--                                                                    <h5 class="modal-title">Edit Status</h5>--}}
+{{--                                                                    <a href="javascript:void(0);" class="btn-close" data-bs-dismiss="modal"></a>--}}
+{{--                                                                </div>--}}
+{{--                                                                <div class="modal-body">--}}
+{{--                                                                    <form method="POST" action="{{route("edit-tabel-final-ranking", $item->id)}}">--}}
+{{--                                                                        @csrf--}}
+{{--                                                                        <div class="mb-3">--}}
+{{--                                                                            <label class="text-black font-w500">Status Penerimaan</label>--}}
+{{--                                                                            <select type="text" class="form-control form-select" name="editstatus">--}}
+{{--                                                                                <option value="Lolos" {{$item->status == "Lolos" ? "selected" : ""}}>Lolos</option>--}}
+{{--                                                                                <option value="Tidak Lolos" {{$item->status == "Tidak Lolos" ? "selected" : ""}}>Tidak Lolos</option>--}}
+{{--                                                                                <option value="Sedang diproses" {{$item->status == "Sedang diproses" ? "selected" : ""}}>Sedang diproses</option>--}}
+{{--                                                                            </select>--}}
+{{--                                                                        </div>--}}
+{{--                                                                        <div class="form-group">--}}
+{{--                                                                            <button type="submit" class="btn btn-primary btn-block">Save</button>--}}
+{{--                                                                        </div>--}}
+{{--                                                                    </form>--}}
+{{--                                                                </div>--}}
+{{--                                                            </div>--}}
+{{--                                                        </div>--}}
+{{--                                                    </div>--}}
+{{--                                                    <a href="javascript:void(0)" class="btn btn-danger shadow btn-xs sharp me-1" data-bs-toggle="modal" data-bs-target="{{__("#modal".$item->id)}}"><i class="fa fa-trash"></i></a>--}}
+{{--                                                    <div class="modal fade" id={{__('modal'.$item->id)}} tabindex="-1" role="dialog"--}}
+{{--                                                         aria-labelledby="exampleModalCenterTitle" aria-hidden="true">--}}
+{{--                                                        <div class="modal-dialog modal-dialog-centered" role="document">--}}
+{{--                                                            <div class="modal-content">--}}
+{{--                                                                <div class="modal-header">--}}
+{{--                                                                    <h5 class="modal-title" id="exampleModalCenterTitle">Hapus Akun</h5>--}}
+{{--                                                                    <a href="javascript:void(0);" class="btn-close" data-bs-dismiss="modal"></a>--}}
+{{--                                                                </div>--}}
+{{--                                                                <div class="modal-body text-center">--}}
+{{--                                                                    <i class="fa fa-warning"--}}
+{{--                                                                       style="font-size: 100px; color: orange"></i>--}}
+{{--                                                                    <p>{{__("Semua data akan dihapus!")}}--}}
+{{--                                                                    </p>--}}
+{{--                                                                </div>--}}
+{{--                                                                <div class="modal-footer">--}}
+{{--                                                                    <a href="{{route("deleteperiode", $item->id)}}">--}}
+{{--                                                                        <button type="button" class="btn btn-danger">Hapus Data</button>--}}
+{{--                                                                    </a>--}}
+{{--                                                                </div>--}}
+{{--                                                            </div>--}}
+{{--                                                        </div>--}}
+{{--                                                    </div>--}}
+{{--                                                </div>--}}
+{{--                                            </td>--}}
                                         </tr>
                                     @endforeach
                                     </tbody>
